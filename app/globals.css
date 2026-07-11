@@ -1,0 +1,212 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-inter: "Inter", "Segoe UI", Arial, sans-serif;
+  --font-cormorant: "Cormorant Garamond", Georgia, serif;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #f5f1ea;
+  color: #1f211f;
+  font-family: var(--font-inter);
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: #0f3d32;
+  color: #faf8f3;
+}
+
+.section-shell {
+  margin: 0 auto;
+  width: min(1120px, calc(100% - 32px));
+}
+
+.eyebrow {
+  color: #a98254;
+  font-size: 0.95rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: #a98254;
+}
+
+.hero-photo {
+  background-image: url("https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2200&q=82");
+  background-position: center;
+  background-size: cover;
+}
+
+.brandIntro {
+  align-items: center;
+  background: #000;
+  display: flex;
+  inset: 0;
+  justify-content: center;
+  overflow: hidden;
+  position: fixed;
+  transition: opacity 400ms ease-out;
+  z-index: 9999;
+}
+
+.brandIntroLeaving {
+  opacity: 0;
+}
+
+.brandIntroLogoWrap {
+  animation: brandLogoPresence 820ms cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+  height: clamp(178px, 17vw, 310px);
+  position: relative;
+  width: clamp(178px, 17vw, 310px);
+}
+
+.brandIntroLeaving .brandIntroLogoWrap {
+  animation: brandLogoExit 400ms ease-out forwards;
+}
+
+.brandIntroLogo {
+  animation: brandLogoImageReveal 820ms cubic-bezier(0.22, 1, 0.36, 1) 180ms both;
+  filter:
+    grayscale(1)
+    brightness(1.86)
+    contrast(0.92);
+  object-fit: contain;
+}
+
+.brandIntroLogoBacklight {
+  animation: brandLogoBacklight 900ms cubic-bezier(0.22, 1, 0.36, 1) 160ms both;
+  background:
+    radial-gradient(
+      circle at 50% 52%,
+      rgba(255, 255, 255, 0.96) 0%,
+      rgba(244, 246, 242, 0.74) 18%,
+      rgba(198, 209, 202, 0.34) 39%,
+      rgba(255, 255, 255, 0.08) 62%,
+      transparent 82%
+    );
+  filter: blur(0.8px);
+  inset: 0;
+  mask-image: url("/logo-aloe-symbol.png");
+  mask-position: center;
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  opacity: 0;
+  position: absolute;
+  -webkit-mask-image: url("/logo-aloe-symbol.png");
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+}
+
+@keyframes brandLogoPresence {
+  0% {
+    filter: blur(2.8px);
+    opacity: 0;
+  }
+
+  48% {
+    filter: blur(0.6px);
+    opacity: 1;
+  }
+
+  100% {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+
+@keyframes brandLogoImageReveal {
+  0% {
+    opacity: 0;
+  }
+
+  42% {
+    opacity: 0.16;
+  }
+
+  72% {
+    opacity: 0.9;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes brandLogoBacklight {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  36% {
+    opacity: 0.98;
+    transform: scale(1);
+  }
+
+  64% {
+    opacity: 0.62;
+  }
+
+  100% {
+    opacity: 0.24;
+    transform: scale(1);
+  }
+}
+
+@keyframes brandLogoExit {
+  0% {
+    filter: brightness(1) blur(0);
+    opacity: 1;
+  }
+
+  100% {
+    filter: brightness(0.12) blur(2px);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .brandIntroLogoWrap {
+    height: clamp(156px, 48vw, 210px);
+    width: clamp(156px, 48vw, 210px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brandIntroLogoWrap,
+  .brandIntroLogo,
+  .brandIntroLogoBacklight,
+  .brandIntroLeaving .brandIntroLogoWrap {
+    animation: none;
+    opacity: 1;
+  }
+
+  .brandIntroLogoBacklight {
+    display: none;
+  }
+}
