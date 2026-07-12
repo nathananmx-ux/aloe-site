@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const INTRO_STORAGE_KEY = "aloe-brand-intro-shown-v5";
+const INTRO_STORAGE_KEY = "aloe-brand-intro-shown-v6";
 
 export function BrandIntro() {
   const [visible, setVisible] = useState(false);
@@ -22,8 +22,8 @@ export function BrandIntro() {
     window.sessionStorage.setItem(INTRO_STORAGE_KEY, "true");
     setVisible(true);
 
-    const fadeTimer = window.setTimeout(() => setLeaving(true), 1600);
-    const removeTimer = window.setTimeout(() => setVisible(false), 2000);
+    const fadeTimer = window.setTimeout(() => setLeaving(true), 1000);
+    const removeTimer = window.setTimeout(() => setVisible(false), 1200);
 
     return () => {
       window.clearTimeout(fadeTimer);
@@ -46,10 +46,11 @@ export function BrandIntro() {
           src="/logo-aloe-symbol.png"
           alt=""
           fill
-          sizes="(max-width: 767px) 188px, 280px"
+          sizes="(max-width: 767px) 168px, 260px"
           className="brandIntroLogo"
           priority
         />
+        <span className="brandIntroLogoSweep" />
       </div>
     </div>
   );

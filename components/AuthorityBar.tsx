@@ -10,13 +10,15 @@ export function AuthorityBar() {
         {authorityItems.map((item) => (
           <div
             key={item.title}
-            className="border-b border-moss/10 px-5 py-6 sm:border-r lg:border-b-0 last:border-b-0 sm:even:border-r-0 lg:even:border-r lg:last:border-r-0"
+            className="flex min-h-[172px] flex-col border-b border-moss/10 px-5 py-6 sm:border-r lg:border-b-0 last:border-b-0 sm:even:border-r-0 lg:even:border-r lg:last:border-r-0"
           >
             <span className="mb-3 block h-1 w-9 rounded-full bg-bronze" />
-            <strong className="block font-serif text-2xl font-semibold leading-tight text-moss md:text-3xl">
-              {item.title}
-            </strong>
-            <span className="mt-2 block text-sm font-semibold leading-6 text-graphite/70 md:text-base">
+            <div className="flex min-h-[76px] items-start">
+              <strong className="block font-serif text-2xl font-semibold leading-tight text-moss md:text-3xl">
+                {item.title}
+              </strong>
+            </div>
+            <span className="mt-1 block text-sm font-semibold leading-6 text-graphite/70 md:text-base">
               {item.text}
             </span>
           </div>

@@ -42,7 +42,7 @@ export const managementIndicators = [
 
 // Faixa de posicionamento. Pode voltar a exibir números quando houver dados reais.
 export const authorityItems = [
-  { title: "Pequenos condomínios", text: "especialidade da ALOE" },
+  { title: "Pequenos condomínios", text: "especialidade da Aloe" },
   { title: "Grande ABC", text: "região de atuação" },
   {
     title: "Síndico profissional",
@@ -119,57 +119,84 @@ export const professionalSyndicItems = [
 export const plans = [
   {
     name: "Basic",
-    description: "Para condomínios que precisam da estrutura administrativa essencial.",
+    level: 1,
+    label: "Essencial",
+    description: "Estrutura administrativa essencial",
+    idealFor: "Condomínios que precisam do básico bem organizado.",
+    evolution: "Base de organização financeira e administrativa.",
     features: [
-      "Organização administrativa inicial",
-      "Acompanhamento financeiro essencial",
-      "Boletos e pagamentos da rotina comum",
-      "Prestação de contas organizada"
-    ]
+      "Administração financeira essencial",
+      "Boletos e rotina administrativa",
+      "Prestação de contas organizada",
+      "Suporte básico ao síndico"
+    ],
+    highlight: "Ponto de partida"
   },
   {
     name: "Silver",
-    description: "Para condomínios que querem administração com mais apoio recorrente.",
+    level: 2,
+    label: "Intermediário",
+    description: "Mais apoio recorrente na rotina",
+    idealFor:
+      "Condomínios que querem mais acompanhamento do que o essencial.",
+    evolution: "Inclui tudo do Basic e amplia o apoio documental e operacional.",
     features: [
-      "Gestão financeira com acompanhamento recorrente",
-      "Comunicação com síndico e conselho",
-      "Apoio documental e administrativo",
-      "Rotina de cobranças e pagamentos"
-    ]
+      "Tudo do Basic",
+      "Suporte operacional ampliado",
+      "Mais apoio documental",
+      "Mais proximidade na rotina"
+    ],
+    highlight: "Evolui em acompanhamento"
   },
   {
     name: "Gold",
     badge: "Mais pedido",
-    description:
-      "Plano mais pedido, com equilíbrio entre gestão, suporte e rotina de conservação.",
+    level: 3,
+    label: "Mais pedido",
+    description: "Equilíbrio entre gestão, suporte e rotina condominial",
+    idealFor: "Condomínios que querem administração mais completa.",
+    evolution:
+      "Inclui tudo do Silver e traz apoio mais robusto para o síndico.",
     features: [
-      "Administração condominial mais completa",
-      "Suporte recorrente ao síndico",
-      "Apoio em fornecedores e orçamentos",
-      "Rotina de conservação acompanhada"
-    ]
+      "Tudo do Silver",
+      "Acompanhamento mais completo",
+      "Apoio mais robusto ao síndico",
+      "Melhor equilíbrio entre gestão e operação"
+    ],
+    highlight: "Melhor equilíbrio"
   },
   {
     name: "Platinum",
-    description:
-      "Para condomínios que buscam mais serviços preventivos e acompanhamento.",
+    level: 4,
+    label: "Avançado",
+    description: "Gestão mais robusta e preventiva",
+    idealFor:
+      "Condomínios que precisam de mais presença e previsibilidade.",
+    evolution:
+      "Inclui tudo do Gold e adiciona uma rotina mais preventiva.",
     features: [
-      "Acompanhamento preventivo da rotina",
-      "Apoio operacional mais próximo",
-      "Organização de demandas e prioridades",
-      "Mais suporte para decisões administrativas"
-    ]
+      "Tudo do Gold",
+      "Serviços preventivos adicionais",
+      "Maior nível de suporte e acompanhamento",
+      "Rotina mais estruturada"
+    ],
+    highlight: "Evolui em prevenção"
   },
   {
     name: "Black",
-    description:
-      "Para condomínios que desejam uma gestão mais completa, incluindo serviços de conservação ampliados.",
+    level: 5,
+    label: "Completo",
+    description: "Gestão mais completa da linha",
+    idealFor: "Condomínios que querem o máximo nível de suporte.",
+    evolution:
+      "Inclui tudo do Platinum e amplia a cobertura de acompanhamento.",
     features: [
-      "Gestão condominial em formato ampliado",
-      "Conservação com escopo mais robusto",
-      "Acompanhamento próximo da operação",
-      "Suporte prioritário para rotinas críticas"
-    ]
+      "Tudo do Platinum",
+      "Pacote mais completo",
+      "Maior amplitude de serviços",
+      "Acompanhamento ampliado"
+    ],
+    highlight: "Maior amplitude"
   }
 ];
 
