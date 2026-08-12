@@ -1,5 +1,22 @@
-import { AlertCircle } from "lucide-react";
+import {
+  CalendarCheck,
+  CircleDollarSign,
+  ClipboardCheck,
+  FileText,
+  MessageSquareText,
+  WalletCards,
+  Wrench
+} from "lucide-react";
 import { painPoints } from "@/data/home";
+
+const painIcons = [
+  FileText,
+  MessageSquareText,
+  CalendarCheck,
+  CircleDollarSign,
+  WalletCards,
+  Wrench
+];
 
 export function ProblemSection() {
   return (
@@ -11,29 +28,54 @@ export function ProblemSection() {
             Seu condomínio não precisa depender de improviso.
           </h2>
           <p className="mt-6 text-lg leading-8 text-graphite/75">
-            Administrar um condomínio exige método, responsabilidade e
-            acompanhamento constante. Quando a gestão não está bem estruturada,
-            o síndico passa a lidar com cobranças excessivas, conflitos
-            recorrentes, prestação de contas confusa, inadimplência crescente e
-            decisões sem respaldo técnico.
+            Uma boa administração reduz ruído, organiza prioridades e dá mais
+            segurança para síndicos, conselho e moradores. Quando a rotina não
+            está estruturada, tarefas simples viram urgências e decisões
+            importantes acabam sendo tomadas sem clareza.
           </p>
+          <div className="mt-8 overflow-hidden rounded-lg border border-moss/10 bg-porcelain shadow-[0_12px_35px_rgba(25,33,29,0.06)]">
+            <div className="problem-visual-photo min-h-[220px]" />
+            <div className="grid gap-3 p-5 sm:grid-cols-2">
+              {[
+                { label: "Prestação de contas", icon: FileText },
+                { label: "Boletos e caixa", icon: WalletCards }
+              ].map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div
+                    key={item.label}
+                    className="flex items-center gap-3 rounded-md border border-moss/10 bg-white px-4 py-3"
+                  >
+                    <Icon aria-hidden="true" className="text-moss" size={19} />
+                    <span className="text-xs font-bold text-graphite/75">
+                      {item.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
         </div>
 
         <div className="grid gap-4 sm:grid-cols-2">
-          {painPoints.map((point) => (
-            <article
-              key={point}
-              className="rounded-lg border border-moss/10 bg-porcelain p-5 shadow-[0_12px_35px_rgba(25,33,29,0.06)]"
-            >
-              <AlertCircle
-                aria-hidden="true"
-                className="mb-5 text-clay"
-                size={24}
-                strokeWidth={1.7}
-              />
-              <h3 className="text-base font-semibold leading-6 text-ink">{point}</h3>
-            </article>
-          ))}
+          {painPoints.map((point, index) => {
+            const Icon = painIcons[index] ?? ClipboardCheck;
+
+            return (
+              <article
+                key={point}
+                className="flex min-h-[138px] flex-col justify-between rounded-lg border border-moss/10 bg-porcelain p-5 shadow-[0_12px_35px_rgba(25,33,29,0.06)]"
+              >
+                <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-bronze/10 text-clay">
+                  <Icon aria-hidden="true" size={22} strokeWidth={1.7} />
+                </span>
+                <h3 className="text-base font-semibold leading-6 text-ink">
+                  {point}
+                </h3>
+              </article>
+            );
+          })}
         </div>
       </div>
     </section>

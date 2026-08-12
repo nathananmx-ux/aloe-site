@@ -9,16 +9,12 @@ type BrandMarkProps = {
 export function BrandMark({ compact = false, light = false }: BrandMarkProps) {
   return (
     <span className="inline-flex items-center gap-3">
-      <span
-        className={`relative ${
-          compact ? "h-12 w-12" : "h-14 w-14"
-        }`}
-      >
+      <span className={`relative ${compact ? "h-10 w-10" : "h-14 w-14"}`}>
         <Image
           src={logo.src}
           alt={logo.alt}
           fill
-          sizes={compact ? "48px" : "56px"}
+          sizes={compact ? "40px" : "56px"}
           className="object-contain"
           priority={compact}
         />
@@ -26,7 +22,7 @@ export function BrandMark({ compact = false, light = false }: BrandMarkProps) {
       <span>
         <span
           className={`block font-serif font-semibold leading-none ${
-            compact ? "text-2xl" : "text-3xl"
+            compact ? "text-xl" : "text-3xl"
           } ${light ? "text-white" : "text-ink"}`}
         >
           Aloe Condomínios

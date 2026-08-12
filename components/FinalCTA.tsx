@@ -19,8 +19,16 @@ export function FinalCTA() {
         </div>
 
         <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-          <ButtonLink href="#contato">Solicitar proposta</ButtonLink>
-          <ButtonLink href={contact.whatsappHref} variant="secondary" whatsapp>
+          <ButtonLink href={contact.whatsappHref} target="_blank" rel="noopener noreferrer">
+            Solicitar proposta
+          </ButtonLink>
+          <ButtonLink
+            href={contact.whatsappHref}
+            variant="secondary"
+            whatsapp
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             Falar pelo WhatsApp
           </ButtonLink>
         </div>

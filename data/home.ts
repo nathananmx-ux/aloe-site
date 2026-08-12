@@ -24,13 +24,14 @@ export const logo = {
 };
 
 export const navItems = [
-  { label: "Início", href: "#inicio" },
-  { label: "Gestão", href: "#gestao" },
-  { label: "Serviços", href: "#servicos" },
-  { label: "Síndico profissional", href: "#sindico-profissional" },
-  { label: "Planos", href: "#planos" },
-  { label: "Sobre", href: "#sobre" },
-  { label: "Contato", href: "#contato" }
+  { label: "Início", href: "/#inicio" },
+  { label: "Quem Somos", href: "/#quem-somos" },
+  { label: "Blog", href: "/blog" },
+  { label: "Implantação", href: "/implantacao" },
+  { label: "Planos", href: "/planos" },
+  { label: "Área do Cliente", href: "/area-do-cliente" },
+  { label: "Boletos", href: "/boletos", featured: true },
+  { label: "Contato", href: "/#contato" }
 ];
 
 export const managementIndicators = [
@@ -42,15 +43,21 @@ export const managementIndicators = [
 
 // Faixa de posicionamento. Pode voltar a exibir números quando houver dados reais.
 export const authorityItems = [
-  { title: "Pequenos condomínios", text: "especialidade da Aloe" },
-  { title: "Grande ABC", text: "região de atuação" },
   {
-    title: "Síndico profissional",
-    text: "serviço complementar disponível"
+    title: "Residenciais e Comerciais",
+    text: "Atuação para condomínios de diferentes perfis."
   },
   {
-    title: "Gestão por unidade",
-    text: "planos adaptados à rotina do condomínio"
+    title: "ABCDM e Grande SP",
+    text: "Presença regional com atendimento próximo."
+  },
+  {
+    title: "Gerente Exclusivo",
+    text: "Acompanhamento dedicado para o síndico."
+  },
+  {
+    title: "Planos especiais para pequenos condomínios",
+    text: "Soluções sob medida para até 16 unidades."
   }
 ];
 
@@ -232,15 +239,15 @@ export const audienceItems = [
 export const partners = [
   {
     name: "Leonardo Almeida",
-    role: "Co-CEO e Sócio-diretor",
+    role: "CEO",
     description:
-      "Engenheiro civil e administrador, gerente de condomínios, responsável pelo time comercial e operacional da Aloe."
+      "Engenheiro civil e administrador, gerente de condomínios, responsável pelo time comercial e operacional."
   },
   {
     name: "Leonardo Sandovette",
-    role: "Co-CEO e Sócio-diretor",
+    role: "COO",
     description:
-      "Pós-graduado em Administração, com ênfase em finanças, síndico profissional e responsável pelo time de backoffice da Aloe."
+      "Pós-graduado em Administração, com ênfase em finanças, síndico profissional e responsável pelo time de backoffice."
   }
 ];
 
@@ -287,35 +294,10 @@ export const differentials = [
   }
 ];
 
-// Substituir por depoimentos reais e autorizados antes da publicação.
-export const testimonials = [
-  {
-    quote:
-      "A Aloe trouxe mais método para a rotina do condomínio e deixou as informações mais fáceis de acompanhar.",
-    name: "Nome do síndico",
-    condo: "Nome do condomínio",
-    role: "Síndico"
-  },
-  {
-    quote:
-      "O conselho passou a receber documentos melhor organizados e com mais previsibilidade para análise.",
-    name: "Nome do conselheiro",
-    condo: "Nome do condomínio",
-    role: "Conselheiro"
-  },
-  {
-    quote:
-      "A comunicação ficou mais objetiva, com respostas claras para os temas financeiros e administrativos.",
-    name: "Nome do morador",
-    condo: "Nome do condomínio",
-    role: "Morador"
-  }
-];
-
 export const contact = {
-  whatsappLabel: "[INSERIR WHATSAPP CORPORATIVO]",
-  whatsappHref: "#contato",
-  email: "[INSERIR E-MAIL CORPORATIVO]",
+  whatsappLabel: "+55 11 91042-3492",
+  whatsappHref: "https://wa.me/5511910423492",
+  email: "contato@almeidagalante.com.br",
   city: "Santo André/SP",
-  serviceRegion: "Grande ABC e região, se aplicável"
+  serviceRegion: "ABCDM e Grande SP"
 };

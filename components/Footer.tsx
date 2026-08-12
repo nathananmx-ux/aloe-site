@@ -33,12 +33,22 @@ export function Footer() {
           <h2 className="text-sm font-bold text-ink">Contato</h2>
           <div className="mt-4 space-y-3 text-sm leading-6 text-graphite/70">
             <p>
-              <a className="focus-ring rounded-md hover:text-moss" href={contact.whatsappHref}>
+              <a
+                className="focus-ring rounded-md hover:text-moss"
+                href={contact.whatsappHref}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 WhatsApp: {contact.whatsappLabel}
               </a>
             </p>
             <p>
-              E-mail: {contact.email}
+              <a
+                className="focus-ring rounded-md hover:text-moss"
+                href={`mailto:${contact.email}`}
+              >
+                E-mail: {contact.email}
+              </a>
             </p>
             <p>Cidade: {contact.city}</p>
             <p>Região de atendimento: {contact.serviceRegion}</p>

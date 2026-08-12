@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
-const INTRO_STORAGE_KEY = "aloe-brand-intro-shown-v6";
+const INTRO_STORAGE_KEY = "aloe-brand-intro-shown-v7";
 
 export function BrandIntro() {
   const [visible, setVisible] = useState(false);
@@ -22,8 +22,8 @@ export function BrandIntro() {
     window.sessionStorage.setItem(INTRO_STORAGE_KEY, "true");
     setVisible(true);
 
-    const fadeTimer = window.setTimeout(() => setLeaving(true), 1000);
-    const removeTimer = window.setTimeout(() => setVisible(false), 1200);
+    const fadeTimer = window.setTimeout(() => setLeaving(true), 1850);
+    const removeTimer = window.setTimeout(() => setVisible(false), 2200);
 
     return () => {
       window.clearTimeout(fadeTimer);

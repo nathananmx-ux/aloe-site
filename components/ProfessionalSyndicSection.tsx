@@ -1,4 +1,4 @@
-import { CheckCircle2 } from "lucide-react";
+import { CalendarCheck, CheckCircle2, ClipboardCheck } from "lucide-react";
 import { professionalSyndicItems } from "@/data/home";
 import { ButtonLink } from "./ButtonLink";
 
@@ -30,6 +30,34 @@ export function ProfessionalSyndicSection() {
         </div>
 
         <div className="grid gap-3 sm:grid-cols-2">
+          <div className="professional-visual-photo min-h-[220px] rounded-lg border border-moss/10 sm:col-span-2" />
+          <div className="rounded-lg border border-moss/10 bg-porcelain p-5 sm:col-span-2">
+            <div className="flex flex-wrap gap-3">
+              {[
+                { label: "Visitas e prioridades", icon: CalendarCheck },
+                { label: "Demandas acompanhadas", icon: ClipboardCheck }
+              ].map((item) => {
+                const Icon = item.icon;
+
+                return (
+                  <div
+                    key={item.label}
+                    className="flex flex-1 items-center gap-3 rounded-md border border-moss/10 bg-white px-4 py-3"
+                  >
+                    <Icon
+                      aria-hidden="true"
+                      className="shrink-0 text-moss"
+                      size={19}
+                      strokeWidth={1.7}
+                    />
+                    <span className="text-xs font-bold text-graphite/75">
+                      {item.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
           {professionalSyndicItems.map((item) => (
             <div
               key={item}
