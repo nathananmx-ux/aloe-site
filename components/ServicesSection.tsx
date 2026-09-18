@@ -7,7 +7,8 @@ const offers = [
   {
     title: "Gerente especialista com atendimento próximo",
     text: "Um gerente dedicado para acompanhar a rotina do condomínio, apoiar o síndico e facilitar a comunicação com a administração.",
-    image: "/images/gerente-aloe.jpg"
+    image:
+      "https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=1200&q=82"
   },
   {
     title: "Conta bancária individual para todos os condomínios",

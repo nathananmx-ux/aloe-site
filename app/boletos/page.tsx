@@ -8,14 +8,14 @@ import { contact } from "@/data/home";
 export const metadata: Metadata = {
   title: "Boletos Aloe | Segunda via e pagamento",
   description:
-    "Acesse a segunda via de boletos da Aloe pelo boleto comum ou pela plataforma Condopay/Condoconta."
+    "Acesse a segunda via de boletos da Aloe pelo sistema de boletos ou pela plataforma Condopay/Condoconta."
 };
 
 const boletoOptions = [
   {
-    title: "Boleto comum",
+    title: "Boleto",
     text: "Use esta opção para acessar boletos emitidos pelo sistema tradicional da administradora.",
-    button: "Acessar boleto comum",
+    button: "Acessar boleto",
     href: "https://www.uniondata.com.br/boletoExpress/go.ud?id=442&hash=7400a0876647009a8a5617a9d9caf72fe916efd3",
     icon: WalletCards
   },

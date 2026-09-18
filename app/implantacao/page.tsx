@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { CheckCircle2 } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Footer } from "@/components/Footer";
@@ -26,19 +27,32 @@ export default function ImplantacaoPage() {
     <>
       <Header />
       <main className="bg-porcelain">
-        <section className="border-b border-moss/10 bg-paper py-20 md:py-24">
-          <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
-            <div>
+        <section className="relative isolate overflow-hidden border-b border-moss/10 bg-paper">
+          <div className="absolute inset-x-0 top-0 -z-10 h-64 md:inset-0 md:h-full">
+            <Image
+              src="/images/implantacao-condominio.png"
+              alt="Imagem ilustrativa da entrada de um condomínio recém-entregue"
+              fill
+              priority
+              sizes="100vw"
+              className="object-cover object-[72%_center] md:object-center"
+            />
+          </div>
+          <div className="section-shell relative pb-12 pt-[19rem] md:py-24">
+            <div className="max-w-[34rem]">
               <p className="eyebrow">Implantação</p>
               <h1 className="mt-3 font-serif text-5xl font-semibold leading-tight text-ink md:text-6xl">
-                Implantação condominial com administração desde o primeiro dia.
+                Implantação condominial
               </h1>
+              <p className="mt-6 text-xl font-semibold leading-8 text-ink">
+                Administração organizada desde o primeiro dia.
+              </p>
+              <p className="mt-4 max-w-[31rem] text-base leading-7 text-graphite/80">
+                A Aloe acompanha condomínios em fase de implantação para
+                organizar os primeiros passos administrativos, financeiros e
+                operacionais desde a entrega das unidades.
+              </p>
             </div>
-            <p className="text-lg leading-8 text-graphite/75">
-              A Aloe acompanha condomínios em fase de implantação para organizar
-              os primeiros passos administrativos, financeiros e operacionais
-              desde a entrega das unidades.
-            </p>
           </div>
         </section>
 

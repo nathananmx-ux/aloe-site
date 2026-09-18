@@ -58,19 +58,19 @@ export function ProblemSection() {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
+        <div className="grid content-start gap-3 sm:grid-cols-2">
           {painPoints.map((point, index) => {
             const Icon = painIcons[index] ?? ClipboardCheck;
 
             return (
               <article
                 key={point}
-                className="flex min-h-[138px] flex-col justify-between rounded-lg border border-moss/10 bg-porcelain p-5 shadow-[0_12px_35px_rgba(25,33,29,0.06)]"
+                className="flex min-h-[104px] items-center gap-4 rounded-lg border border-moss/10 bg-porcelain p-4 shadow-[0_12px_35px_rgba(25,33,29,0.06)]"
               >
-                <span className="mb-5 flex h-11 w-11 items-center justify-center rounded-md bg-bronze/10 text-clay">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-bronze/10 text-clay">
                   <Icon aria-hidden="true" size={22} strokeWidth={1.7} />
                 </span>
-                <h3 className="text-base font-semibold leading-6 text-ink">
+                <h3 className="text-sm font-semibold leading-5 text-ink">
                   {point}
                 </h3>
               </article>

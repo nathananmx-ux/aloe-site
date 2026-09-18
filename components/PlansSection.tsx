@@ -2,7 +2,7 @@
 
 import { CheckCircle2, FileCheck2, MessageCircle } from "lucide-react";
 import { useState } from "react";
-import { plans } from "@/data/home";
+import { plans } from "@/data/plans";
 import { getPlanWhatsAppHref } from "@/lib/planWhatsApp";
 import { ButtonLink } from "./ButtonLink";
 
@@ -24,7 +24,7 @@ export function PlansSection() {
           <p className="mt-5 text-lg leading-8 text-graphite/75">
             A Aloe estrutura planos de administração para condomínios que
             precisam desde a organização essencial até uma gestão mais completa,
-            com evolução clara de acompanhamento, suporte e presença na rotina.
+            com diferenças claras nos serviços de limpeza e manutenção incluídos.
           </p>
         </div>
 
@@ -113,7 +113,7 @@ export function PlansSection() {
                             : "bg-bronze/10 text-bronze"
                         }`}
                       >
-                        {plan.badge ?? plan.label}
+                        {plan.badge}
                       </span>
                       {selected ? (
                         <span
@@ -216,7 +216,7 @@ export function PlansSection() {
                 {selectedPlan.name}
               </h3>
               <span className="rounded-md bg-bronze px-3 py-1 text-sm font-extrabold text-white">
-                {selectedPlan.badge ?? selectedPlan.label}
+                {selectedPlan.badge}
               </span>
               <span className="rounded-md bg-moss px-3 py-1 text-sm font-extrabold text-white">
                 Selecionado
@@ -240,7 +240,7 @@ export function PlansSection() {
               Inclui
             </p>
             <div className="mt-3 grid gap-3 sm:grid-cols-2">
-              {selectedPlan.features.map((feature) => (
+              {selectedPlan.benefits.map((feature) => (
                 <div
                   key={feature}
                   className="flex items-start gap-3 rounded-md border border-moss/10 bg-white px-4 py-3"

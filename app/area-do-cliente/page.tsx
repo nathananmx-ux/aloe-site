@@ -1,8 +1,5 @@
 import type { Metadata } from "next";
 import {
-  BadgeCheck,
-  FileText,
-  Headphones,
   Landmark,
   MessageSquareText,
   WalletCards
@@ -32,30 +29,11 @@ const accessItems = [
     icon: Landmark
   },
   {
-    title: "Falar com a equipe Aloe",
-    text: "Entre em contato pelo WhatsApp corporativo da Aloe.",
+    title: "Atendimento Aloe",
+    text: "Tire dúvidas e solicite suporte administrativo pelo WhatsApp da equipe.",
     href: contact.whatsappHref,
     external: true,
     icon: MessageSquareText
-  },
-  {
-    title: "Solicitar suporte",
-    text: "Canal para dúvidas e solicitações da rotina administrativa.",
-    href: contact.whatsappHref,
-    external: true,
-    icon: Headphones
-  },
-  {
-    title: "Atualização cadastral",
-    text: "Em breve, este acesso ficará disponível para clientes Aloe.",
-    href: "/area-do-cliente",
-    icon: BadgeCheck
-  },
-  {
-    title: "Documentos do condomínio",
-    text: "Em breve, esta área reunirá documentos e acessos importantes.",
-    href: "/area-do-cliente",
-    icon: FileText
   }
 ];
 
@@ -64,24 +42,22 @@ export default function AreaDoClientePage() {
     <>
       <Header />
       <main className="bg-porcelain">
-        <section className="border-b border-moss/10 bg-paper py-20 md:py-24">
+        <section className="border-b border-moss/10 bg-paper py-12 md:py-14">
           <div className="section-shell max-w-4xl">
             <p className="eyebrow">Clientes Aloe</p>
             <h1 className="mt-3 font-serif text-5xl font-semibold leading-tight text-ink md:text-6xl">
               Área do Cliente
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-graphite/75">
-              Acesse facilidades e canais importantes para a rotina do seu
-              condomínio.
+              Encontre seu boleto e fale com a equipe pelos canais disponíveis.
             </p>
             <p className="mt-5 max-w-3xl text-sm font-semibold leading-6 text-graphite/68">
-              Esta área reúne acessos importantes para clientes e moradores de
-              condomínios administrados pela Aloe.
+              Para clientes e moradores de condomínios administrados pela Aloe.
             </p>
           </div>
         </section>
 
-        <section className="py-16 md:py-20">
+        <section className="py-10 md:py-12">
           <div className="section-shell grid gap-5 md:grid-cols-2 lg:grid-cols-3">
             {accessItems.map((item) => {
               const Icon = item.icon;

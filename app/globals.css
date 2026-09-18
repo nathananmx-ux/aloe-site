@@ -85,6 +85,11 @@ a {
   text-shadow: 0 2px 18px rgba(0, 0, 0, 0.38);
 }
 
+.hero-side-photo {
+  mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%, #000 88%, transparent 100%);
+}
+
 .services-visual-photo {
   background-image:
     linear-gradient(180deg, rgba(13, 17, 16, 0.08), rgba(13, 17, 16, 0.3)),

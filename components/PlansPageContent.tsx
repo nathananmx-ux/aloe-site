@@ -4,106 +4,10 @@ import { CheckCircle2, FileCheck2, MessageCircle, Minus } from "lucide-react";
 import { useState } from "react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { contact } from "@/data/home";
+import { comparisonRows, plans } from "@/data/plans";
 import { getPlanWhatsAppHref } from "@/lib/planWhatsApp";
 
-const planCards = [
-  {
-    name: "Basic",
-    badge: "Essencial",
-    level: 1,
-    description:
-      "Para condomínios que precisam estruturar a administração básica com organização financeira e suporte inicial.",
-    idealFor: "Rotinas que precisam sair da informalidade com uma base confiável.",
-    benefits: [
-      "Boleto individualizado por unidade",
-      "Pagamento de contas da área comum",
-      "Abertura de conta bancária",
-      "Abertura e regularização de CNPJ",
-      "Balancete mensal direto no boleto"
-    ]
-  },
-  {
-    name: "Silver",
-    badge: "Intermediário",
-    level: 2,
-    description:
-      "Para condomínios que querem mais apoio recorrente na rotina administrativa e operacional.",
-    idealFor: "Condomínios que precisam de administração com apoio operacional.",
-    benefits: [
-      "Benefícios administrativos essenciais",
-      "1 limpeza mensal das áreas comuns",
-      "Apoio documental e operacional",
-      "Rotina administrativa mais acompanhada",
-      "Auxílio jurídico, inclusive cobrança"
-    ]
-  },
-  {
-    name: "Gold",
-    badge: "Mais pedido",
-    level: 3,
-    description:
-      "Para condomínios que buscam equilíbrio entre administração, suporte, limpeza recorrente e acompanhamento mais completo.",
-    idealFor: "Quem quer o melhor equilíbrio entre gestão e operação.",
-    benefits: [
-      "Benefícios administrativos essenciais",
-      "2 limpezas mensais das áreas comuns",
-      "Apoio jurídico e cobrança",
-      "Indicação de profissionais",
-      "Maior equilíbrio entre administração e operação"
-    ],
-    featured: true
-  },
-  {
-    name: "Platinum",
-    badge: "Avançado",
-    level: 4,
-    description:
-      "Para condomínios que precisam de gestão mais preventiva, manutenção recorrente e maior suporte operacional.",
-    idealFor: "Condomínios que querem reduzir pendências e antecipar cuidados.",
-    benefits: [
-      "Benefícios administrativos essenciais",
-      "2 limpezas mensais das áreas comuns",
-      "Limpeza anual da caixa d'água",
-      "Lubrificação trimestral do portão",
-      "Troca de lâmpadas queimadas"
-    ]
-  },
-  {
-    name: "Black",
-    badge: "Completo",
-    level: 5,
-    description:
-      "Para condomínios que desejam a cobertura mais ampla da linha, com mais serviços incluídos e suporte ampliado.",
-    idealFor: "Condomínios que querem a cobertura mais completa da linha.",
-    benefits: [
-      "Benefícios administrativos essenciais",
-      "2 limpezas mensais das áreas comuns",
-      "Limpeza anual da caixa d'água",
-      "Pinturas programadas a cada 5 anos",
-      "Troca de motor queimado do portão"
-    ]
-  }
-];
-
-const comparisonRows = [
-  ["Boleto individualizado por unidade", true, true, true, true, true],
-  ["Pagamento de contas da área comum", true, true, true, true, true],
-  ["Abertura de conta bancária", true, true, true, true, true],
-  ["Abertura e regularização de CNPJ", true, true, true, true, true],
-  ["Administração do fundo de caixa", true, true, true, true, true],
-  ["Balancete mensal direto no boleto", true, true, true, true, true],
-  ["Indicação de profissionais", true, true, true, true, true],
-  ["Auxílio jurídico, inclusive cobrança", true, true, true, true, true],
-  ["Limpeza das áreas comuns por mês", "-", "1", "2", "2", "2"],
-  ["Limpeza anual da caixa d'água", false, false, false, true, true],
-  ["Lubrificação trimestral do portão", false, false, false, true, true],
-  ["Troca de lâmpadas queimadas", false, false, false, true, true],
-  ["Pintura do hall e garagem a cada 5 anos", false, false, false, false, true],
-  ["Pintura externa a cada 5 anos", false, false, false, false, true],
-  ["Troca de motor queimado do portão", false, false, false, false, true]
-] as const;
-
-const planNames = ["Basic", "Silver", "Gold", "Platinum", "Black"];
+const planNames = plans.map((plan) => plan.name);
 
 function FeatureValue({ value }: { value: boolean | string }) {
   if (value === true) {
@@ -253,7 +157,7 @@ export function PlansPageContent() {
             aria-label="Selecionar plano"
             role="tablist"
           >
-            {planCards.map((plan) => {
+            {plans.map((plan) => {
               const active = selectedPlan === plan.name;
 
               return (
@@ -285,7 +189,7 @@ export function PlansPageContent() {
           </div>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-            {planCards.map((plan) => {
+            {plans.map((plan) => {
               const selected = selectedPlan === plan.name;
               const muted = !selected;
 
@@ -513,7 +417,7 @@ export function PlansPageContent() {
           </div>
 
           <div className="mt-8 grid gap-4 md:hidden">
-            {planCards.map((plan, planIndex) => {
+            {plans.map((plan, planIndex) => {
               const selected = selectedPlan === plan.name;
 
               return (

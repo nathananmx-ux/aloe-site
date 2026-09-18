@@ -26,7 +26,6 @@ export const logo = {
 export const navItems = [
   { label: "Início", href: "/#inicio" },
   { label: "Quem Somos", href: "/#quem-somos" },
-  { label: "Blog", href: "/blog" },
   { label: "Implantação", href: "/implantacao" },
   { label: "Planos", href: "/planos" },
   { label: "Área do Cliente", href: "/area-do-cliente" },
@@ -123,90 +122,6 @@ export const professionalSyndicItems = [
   "Organização da sindicância em geral"
 ];
 
-export const plans = [
-  {
-    name: "Basic",
-    level: 1,
-    label: "Essencial",
-    description: "Estrutura administrativa essencial",
-    idealFor: "Condomínios que precisam do básico bem organizado.",
-    evolution: "Base de organização financeira e administrativa.",
-    features: [
-      "Administração financeira essencial",
-      "Boletos e rotina administrativa",
-      "Prestação de contas organizada",
-      "Suporte básico ao síndico"
-    ],
-    highlight: "Ponto de partida"
-  },
-  {
-    name: "Silver",
-    level: 2,
-    label: "Intermediário",
-    description: "Mais apoio recorrente na rotina",
-    idealFor:
-      "Condomínios que querem mais acompanhamento do que o essencial.",
-    evolution: "Inclui tudo do Basic e amplia o apoio documental e operacional.",
-    features: [
-      "Tudo do Basic",
-      "Suporte operacional ampliado",
-      "Mais apoio documental",
-      "Mais proximidade na rotina"
-    ],
-    highlight: "Evolui em acompanhamento"
-  },
-  {
-    name: "Gold",
-    badge: "Mais pedido",
-    level: 3,
-    label: "Mais pedido",
-    description: "Equilíbrio entre gestão, suporte e rotina condominial",
-    idealFor: "Condomínios que querem administração mais completa.",
-    evolution:
-      "Inclui tudo do Silver e traz apoio mais robusto para o síndico.",
-    features: [
-      "Tudo do Silver",
-      "Acompanhamento mais completo",
-      "Apoio mais robusto ao síndico",
-      "Melhor equilíbrio entre gestão e operação"
-    ],
-    highlight: "Melhor equilíbrio"
-  },
-  {
-    name: "Platinum",
-    level: 4,
-    label: "Avançado",
-    description: "Gestão mais robusta e preventiva",
-    idealFor:
-      "Condomínios que precisam de mais presença e previsibilidade.",
-    evolution:
-      "Inclui tudo do Gold e adiciona uma rotina mais preventiva.",
-    features: [
-      "Tudo do Gold",
-      "Serviços preventivos adicionais",
-      "Maior nível de suporte e acompanhamento",
-      "Rotina mais estruturada"
-    ],
-    highlight: "Evolui em prevenção"
-  },
-  {
-    name: "Black",
-    level: 5,
-    label: "Completo",
-    description: "Gestão mais completa da linha",
-    idealFor: "Condomínios que querem o máximo nível de suporte.",
-    evolution:
-      "Inclui tudo do Platinum e amplia a cobertura de acompanhamento.",
-    features: [
-      "Tudo do Platinum",
-      "Pacote mais completo",
-      "Maior amplitude de serviços",
-      "Acompanhamento ampliado"
-    ],
-    highlight: "Maior amplitude"
-  }
-];
-
 export const methodSteps = [
   {
     title: "Diagnóstico",
@@ -240,12 +155,16 @@ export const partners = [
   {
     name: "Leonardo Almeida",
     role: "CEO",
+    image: "/images/leonardo-almeida.jpg",
+    imageClassName: "object-[center_30%] translate-x-[11%] scale-[1.22]",
     description:
       "Engenheiro civil e administrador, gerente de condomínios, responsável pelo time comercial e operacional."
   },
   {
     name: "Leonardo Sandovette",
     role: "COO",
+    image: "/images/leonardo-sandovette.jpg",
+    imageClassName: "object-[center_60%] translate-x-[11%] scale-[1.25]",
     description:
       "Pós-graduado em Administração, com ênfase em finanças, síndico profissional e responsável pelo time de backoffice."
   }

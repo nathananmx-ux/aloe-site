@@ -7,7 +7,6 @@ import { BrandMark } from "./BrandMark";
 const mainNavItems = [
   { label: "Início", href: "/#inicio" },
   { label: "Quem Somos", href: "/#quem-somos" },
-  { label: "Blog", href: "/blog" },
   { label: "Implantação", href: "/implantacao" },
   { label: "Planos", href: "/planos" },
   { label: "Contato", href: "/#contato" }

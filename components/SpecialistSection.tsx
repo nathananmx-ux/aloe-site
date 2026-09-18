@@ -30,21 +30,13 @@ const benefits = [
 export function SpecialistSection() {
   return (
     <section className="bg-paper py-20 md:py-24">
-      <div className="section-shell grid gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <div className="section-shell grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="overflow-hidden rounded-lg border border-moss/10 bg-porcelain shadow-soft">
           <img
             src="/images/gerente-aloe.jpg"
             alt="Gerente Aloe em ambiente institucional"
-            className="h-[520px] w-full object-cover object-[center_28%]"
+            className="aspect-[4/5] w-full object-cover object-[center_28%]"
           />
-          <div className="border-t border-moss/10 p-6">
-            <p className="text-sm font-semibold leading-7 text-graphite/75">
-              Cada condomínio tem uma rotina própria. Por isso, a Aloe trabalha
-              com acompanhamento próximo, análise das demandas recorrentes e
-              suporte direto ao síndico para transformar problemas do dia a dia
-              em decisões mais organizadas, documentadas e previsíveis.
-            </p>
-          </div>
         </div>
 
         <div>
