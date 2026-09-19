@@ -9,14 +9,14 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: "#F5F1EA",
-        porcelain: "#FAF8F3",
+        paper: "#F2F4F1",
+        porcelain: "#FFFFFF",
         graphite: "#1F211F",
         ink: "#0D1110",
         moss: "#0F3D32",
         sage: "#6F837A",
         bronze: "#A7652A",
-        mist: "#E7DED1",
+        mist: "#E2E7E2",
         clay: "#A7652A"
       },
       fontFamily: {

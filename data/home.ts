@@ -27,6 +27,8 @@ export const navItems = [
   { label: "Início", href: "/#inicio" },
   { label: "Quem Somos", href: "/#quem-somos" },
   { label: "Implantação", href: "/implantacao" },
+  { label: "Pequenos condomínios", href: "/pequenos-condominios" },
+  { label: "Troca de administradora", href: "/troca-de-administradora" },
   { label: "Planos", href: "/planos" },
   { label: "Área do Cliente", href: "/area-do-cliente" },
   { label: "Boletos", href: "/boletos", featured: true },
@@ -156,7 +158,7 @@ export const partners = [
     name: "Leonardo Almeida",
     role: "CEO",
     image: "/images/leonardo-almeida.jpg",
-    imageClassName: "object-[center_30%] translate-x-[11%] scale-[1.22]",
+    imageClassName: "object-[center_35%]",
     description:
       "Engenheiro civil e administrador, gerente de condomínios, responsável pelo time comercial e operacional."
   },
@@ -164,7 +166,7 @@ export const partners = [
     name: "Leonardo Sandovette",
     role: "COO",
     image: "/images/leonardo-sandovette.jpg",
-    imageClassName: "object-[center_60%] translate-x-[11%] scale-[1.25]",
+    imageClassName: "object-[center_58%]",
     description:
       "Pós-graduado em Administração, com ênfase em finanças, síndico profissional e responsável pelo time de backoffice."
   }
@@ -215,7 +217,8 @@ export const differentials = [
 
 export const contact = {
   whatsappLabel: "+55 11 91042-3492",
-  whatsappHref: "https://wa.me/5511910423492",
+  whatsappBaseHref: "https://wa.me/5511910423492",
+  whatsappHref: `https://wa.me/5511910423492?text=${encodeURIComponent("Olá! Conheci a Aloe pelo site e gostaria de conversar sobre a administração do meu condomínio.")}`,
   email: "contato@almeidagalante.com.br",
   city: "Santo André/SP",
   serviceRegion: "ABCDM e Grande SP"

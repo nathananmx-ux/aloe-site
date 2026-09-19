@@ -7,6 +7,7 @@ type ButtonLinkProps = {
   whatsapp?: boolean;
   target?: string;
   rel?: string;
+  dataEvent?: string;
 };
 
 export function ButtonLink({
@@ -15,7 +16,8 @@ export function ButtonLink({
   variant = "primary",
   whatsapp = false,
   target,
-  rel
+  rel,
+  dataEvent
 }: ButtonLinkProps) {
   const base =
     "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition";
@@ -29,7 +31,7 @@ export function ButtonLink({
   const Icon = whatsapp ? MessageCircle : ArrowRight;
 
   return (
-    <a href={href} target={target} rel={rel} className={`${base} ${variants[variant]}`}>
+    <a href={href} target={target} rel={rel} data-event={dataEvent} className={`${base} ${variants[variant]}`}>
       <span>{children}</span>
       <Icon aria-hidden="true" size={18} strokeWidth={1.8} />
     </a>

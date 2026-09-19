@@ -7,7 +7,7 @@ export function AboutSection() {
         <div className="grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr]">
           <div>
             <p className="eyebrow">Quem Somos</p>
-            <h2 className="mt-3 font-serif text-4xl font-semibold leading-tight text-ink md:text-5xl">
+            <h2 className="mt-3 font-serif text-3xl font-semibold leading-tight text-ink sm:text-4xl md:text-5xl">
               Experiência técnica, operacional e financeira aplicada à gestão
               condominial.
             </h2>
@@ -21,14 +21,14 @@ export function AboutSection() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid gap-8 border-t border-moss/20 pt-8 md:grid-cols-2">
           {partners.map((partner) => (
             <article
               key={partner.name}
-              className="grid items-start gap-5 rounded-lg border border-moss/10 bg-white p-6 shadow-[0_12px_35px_rgba(25,33,29,0.05)] sm:grid-cols-[112px_1fr]"
+              className="grid min-w-0 items-start gap-6 sm:grid-cols-[128px_minmax(0,1fr)]"
             >
               {partner.image ? (
-                <div className="mx-auto aspect-[4/5] w-40 overflow-hidden rounded-md bg-paper sm:mx-0 sm:w-28">
+                <div className="mx-auto aspect-[4/5] w-36 overflow-hidden bg-paper sm:mx-0 sm:w-32">
                   <img
                     src={partner.image}
                     alt={`Retrato de ${partner.name}`}
@@ -43,11 +43,11 @@ export function AboutSection() {
                   {partner.name.split(" ").map((part) => part[0]).join("")}
                 </div>
               )}
-              <div className="text-center sm:text-left">
-                <span className="inline-flex rounded-md bg-bronze/10 px-3 py-1 text-xs font-extrabold uppercase tracking-[0.08em] text-bronze">
+              <div className="min-w-0 text-center sm:text-left">
+                <span className="text-xs font-bold uppercase text-bronze">
                   {partner.role}
                 </span>
-                <h3 className="mt-4 font-serif text-3xl font-semibold leading-tight text-ink">
+                <h3 className="mt-3 font-serif text-2xl font-semibold leading-tight text-ink lg:text-3xl">
                   {partner.name}
                 </h3>
                 <p className="mt-3 text-sm leading-7 text-graphite/70">

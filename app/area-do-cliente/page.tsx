@@ -11,7 +11,8 @@ import { contact } from "@/data/home";
 export const metadata: Metadata = {
   title: "Área do Cliente | Aloe Condomínios",
   description:
-    "Acessos importantes para clientes e moradores de condomínios administrados pela Aloe."
+    "Acessos importantes para clientes e moradores de condomínios administrados pela Aloe.",
+  alternates: { canonical: "/area-do-cliente" }
 };
 
 const accessItems = [
@@ -45,7 +46,7 @@ export default function AreaDoClientePage() {
         <section className="border-b border-moss/10 bg-paper py-12 md:py-14">
           <div className="section-shell max-w-4xl">
             <p className="eyebrow">Clientes Aloe</p>
-            <h1 className="mt-3 font-serif text-5xl font-semibold leading-tight text-ink md:text-6xl">
+            <h1 className="mt-3 font-serif text-4xl font-semibold leading-tight text-ink sm:text-5xl md:text-6xl">
               Área do Cliente
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-graphite/75">

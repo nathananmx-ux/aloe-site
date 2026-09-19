@@ -8,7 +8,8 @@ import { contact } from "@/data/home";
 export const metadata: Metadata = {
   title: "Boletos Aloe | Segunda via e pagamento",
   description:
-    "Acesse a segunda via de boletos da Aloe pelo sistema de boletos ou pela plataforma Condopay/Condoconta."
+    "Acesse a segunda via de boletos da Aloe pelo sistema de boletos ou pela plataforma Condopay/Condoconta.",
+  alternates: { canonical: "/boletos" }
 };
 
 const boletoOptions = [
@@ -36,7 +37,7 @@ export default function BoletosPage() {
         <section className="border-b border-moss/10 bg-paper py-20 md:py-24">
           <div className="section-shell max-w-4xl">
             <p className="eyebrow">Boletos</p>
-            <h1 className="mt-3 font-serif text-5xl font-semibold leading-tight text-ink md:text-6xl">
+            <h1 className="mt-3 font-serif text-4xl font-semibold leading-tight text-ink sm:text-5xl md:text-6xl">
               Acesse seu boleto
             </h1>
             <p className="mt-6 max-w-3xl text-lg leading-8 text-graphite/75">

@@ -31,7 +31,7 @@ export const plans = [
   },
   {
     name: "Gold",
-    badge: "Mais pedido",
+    badge: "Duas limpezas",
     level: 3,
     description: "Todos os serviços administrativos do Basic com 2 limpezas mensais das áreas comuns.",
     idealFor: "Condomínios que precisam de duas limpezas mensais das áreas comuns.",
@@ -41,7 +41,7 @@ export const plans = [
       "Fundo de caixa, indicação e assessoria remota já incluídos na base",
       "2 limpezas mensais das áreas comuns"
     ],
-    featured: true
+    featured: false
   },
   {
     name: "Platinum",
