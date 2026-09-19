@@ -1,14 +1,51 @@
-import { ArrowUpRight } from "lucide-react";
+import Image from "next/image";
+import { ArrowUpRight, Building2, Sparkles, Wrench } from "lucide-react";
+import { temporaryMedia } from "@/data/media";
+
+const services = [
+  { label: "Administração", icon: Building2 },
+  { label: "Limpeza", icon: Sparkles },
+  { label: "Manutenção", icon: Wrench }
+];
 
 export function SmallCondoSection() {
   return (
     <section className="bg-paper py-20 md:py-24">
-      <div className="section-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-        <div><p className="eyebrow">Até 16 unidades</p><h2 className="mt-4 font-serif text-3xl font-semibold leading-tight text-ink sm:text-4xl md:text-5xl">Condomínio pequeno também merece gestão profissional.</h2></div>
-        <div className="self-end">
-          <p className="text-lg leading-8 text-graphite/80">Uma operação menor não elimina boletos, contas, documentação e decisões coletivas. A Aloe organiza essa base administrativa e oferece opções de limpeza e manutenção de acordo com o plano contratado.</p>
-          <p className="mt-5 leading-7 text-graphite/70">Para pequenos condomínios, a proposta prevê o custeio da abertura do CNPJ pela Aloe. A necessidade de regularização e as condições da contratação são avaliadas na proposta.</p>
-          <a href="/pequenos-condominios" className="focus-ring mt-8 inline-flex items-center gap-2 font-semibold text-moss underline-offset-4 hover:underline">Saiba como funciona <ArrowUpRight size={18} aria-hidden="true" /></a>
+      <div className="section-shell grid overflow-hidden bg-white lg:grid-cols-[1.02fr_0.98fr]">
+        <div className="relative min-h-[360px] lg:min-h-[610px]">
+          <Image
+            src={temporaryMedia.smallCondo.src}
+            alt={temporaryMedia.smallCondo.alt}
+            fill
+            loading="lazy"
+            sizes="(max-width: 1023px) 100vw, 52vw"
+            className="object-cover object-center"
+          />
+          <div className="absolute left-5 top-5 bg-moss px-4 py-2 text-xs font-bold uppercase text-white shadow-soft">
+            Até 16 unidades
+          </div>
+        </div>
+        <div className="flex flex-col justify-center p-7 sm:p-10 lg:p-14">
+          <p className="eyebrow">Pequenos condomínios</p>
+          <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight text-ink sm:text-4xl md:text-5xl">
+            Condomínio pequeno também merece gestão profissional.
+          </h2>
+          <p className="mt-5 text-base leading-7 text-graphite/75">
+            Uma base administrativa organizada, com limpeza e manutenção conforme o plano contratado.
+          </p>
+          <div className="mt-8 flex flex-col border-y border-moss/15 py-5 sm:flex-row sm:items-center">
+            {services.map(({ label, icon: Icon }, index) => (
+              <div key={label} className="flex items-center gap-3 py-2 sm:flex-1 sm:flex-col sm:gap-2 sm:border-r sm:border-moss/15 sm:px-3 sm:text-center sm:last:border-r-0">
+                <Icon size={22} className="text-bronze" aria-hidden="true" />
+                <span className="text-sm font-bold uppercase text-moss">{label}</span>
+                {index < services.length - 1 ? <span className="ml-auto text-bronze sm:hidden">+</span> : null}
+              </div>
+            ))}
+          </div>
+          <p className="mt-5 text-sm leading-6 text-graphite/65">A composição dos serviços depende da modalidade escolhida.</p>
+          <a href="/pequenos-condominios" className="focus-ring mt-7 inline-flex w-fit items-center gap-2 border-b border-moss pb-2 font-semibold text-moss hover:text-bronze">
+            Saiba como funciona <ArrowUpRight size={18} aria-hidden="true" />
+          </a>
         </div>
       </div>
     </section>

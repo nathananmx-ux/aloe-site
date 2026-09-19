@@ -1,3 +1,5 @@
+import { ArrowDown, Building2, Network, UserRoundCheck } from "lucide-react";
+
 const backoffice = ["Financeiro", "Documentos", "Fornecedores", "Cobrança", "Operação"];
 
 export function SpecialistSection() {
@@ -16,19 +18,29 @@ export function SpecialistSection() {
             avancem com organização.
           </p>
         </div>
-        <div className="self-center border-l-2 border-moss/25 pl-6 md:pl-10">
-          <div className="border-b border-moss/15 pb-6">
-            <span className="text-xs font-bold uppercase text-bronze">Quem traz a demanda</span>
-            <p className="mt-2 font-serif text-2xl text-ink">Síndico, conselho e moradores</p>
+        <div className="self-center bg-paper p-6 md:p-9">
+          <div className="grid grid-cols-[48px_1fr] items-center gap-4 border-b border-moss/15 pb-5">
+            <span className="grid size-12 place-items-center rounded-full bg-white text-moss"><Building2 size={22} aria-hidden="true" /></span>
+            <div>
+              <span className="text-xs font-bold uppercase text-bronze">Síndico / condomínio</span>
+              <p className="mt-1 text-sm text-graphite/65">Uma porta de entrada para as demandas.</p>
+            </div>
           </div>
-          <div className="border-b border-moss/15 py-6">
-            <span className="text-xs font-bold uppercase text-bronze">Quem acompanha</span>
-            <p className="mt-2 font-serif text-3xl text-moss">Gerente responsável</p>
+          <ArrowDown className="mx-auto my-3 text-bronze" size={20} aria-hidden="true" />
+          <div className="grid grid-cols-[48px_1fr] items-center gap-4 border-b border-moss/15 pb-5">
+            <span className="grid size-12 place-items-center rounded-full bg-moss text-white"><UserRoundCheck size={22} aria-hidden="true" /></span>
+            <div>
+              <span className="text-xs font-bold uppercase text-bronze">Gerente responsável</span>
+              <p className="mt-1 font-serif text-2xl text-moss">Acompanha e coordena</p>
+            </div>
           </div>
-          <div className="pt-6">
-            <span className="text-xs font-bold uppercase text-bronze">Quem executa e apoia</span>
-            <p className="mt-2 font-serif text-2xl text-ink">Backoffice Aloe</p>
-            <p className="mt-3 text-sm leading-7 text-graphite/65">{backoffice.join("  ·  ")}</p>
+          <ArrowDown className="mx-auto my-3 text-bronze" size={20} aria-hidden="true" />
+          <div className="grid grid-cols-[48px_1fr] items-center gap-4">
+            <span className="grid size-12 place-items-center rounded-full bg-white text-moss"><Network size={22} aria-hidden="true" /></span>
+            <div>
+              <span className="text-xs font-bold uppercase text-bronze">Backoffice Aloe</span>
+              <p className="mt-2 text-sm leading-6 text-graphite/70">{backoffice.join("  •  ")}</p>
+            </div>
           </div>
         </div>
       </div>

@@ -55,20 +55,82 @@ a {
   outline-color: #a98254;
 }
 
-.hero-main-image {
-  object-position: center 44%;
+.hero-directors-image {
+  object-position: center 42%;
 }
 
-.hero-main-overlay {
-  background: linear-gradient(90deg, rgba(9, 24, 20, 0.96) 0%, rgba(9, 24, 20, 0.86) 34%, rgba(9, 24, 20, 0.34) 70%, rgba(9, 24, 20, 0.12) 100%);
+.hero-condo-image {
+  object-position: center 48%;
+}
+
+.hero-maintenance-image {
+  object-position: center;
+}
+
+.hero-carousel-overlay {
+  background:
+    linear-gradient(90deg, rgba(7, 20, 17, 0.97) 0%, rgba(7, 20, 17, 0.9) 37%, rgba(7, 20, 17, 0.46) 68%, rgba(7, 20, 17, 0.22) 100%),
+    linear-gradient(0deg, rgba(7, 20, 17, 0.34), transparent 55%);
+}
+
+.hero-technology-pattern {
+  background:
+    linear-gradient(120deg, rgba(255, 255, 255, 0.035) 25%, transparent 25%) 0 0 / 88px 88px,
+    linear-gradient(300deg, rgba(167, 101, 42, 0.11), transparent 55%);
+}
+
+.hero-phone-stage {
+  min-height: 500px;
+  perspective: 1200px;
+}
+
+.hero-phone {
+  aspect-ratio: 9 / 16;
+  width: clamp(170px, 14vw, 220px);
+}
+
+.hero-phone-1 {
+  z-index: 1;
+  margin-right: -34px;
+  transform: translateY(26px) rotate(-5deg);
+}
+
+.hero-phone-2 {
+  z-index: 3;
+  width: clamp(190px, 16vw, 245px);
+}
+
+.hero-phone-3 {
+  z-index: 2;
+  margin-left: -34px;
+  transform: translateY(30px) rotate(5deg);
 }
 
 @media (max-width: 767px) {
-  .hero-main-image {
-    object-position: 70% center;
+  .hero-directors-image {
+    object-position: 58% center;
   }
 
-  .hero-main-overlay {
-    background: linear-gradient(90deg, rgba(9, 24, 20, 0.89), rgba(9, 24, 20, 0.64)), linear-gradient(0deg, rgba(9, 24, 20, 0.5), transparent);
+  .hero-condo-image {
+    object-position: 56% center;
+  }
+
+  .hero-carousel-overlay {
+    background:
+      linear-gradient(90deg, rgba(7, 20, 17, 0.87), rgba(7, 20, 17, 0.58)),
+      linear-gradient(0deg, rgba(7, 20, 17, 0.78), rgba(7, 20, 17, 0.18) 72%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .hero-carousel *,
+  .hero-carousel *::before,
+  .hero-carousel *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

@@ -1,8 +1,8 @@
 const signals = [
-  { title: "ABCDM e Grande SP", detail: "Atendimento regional" },
-  { title: "Gerente dedicado", detail: "Um responsável pela rotina" },
-  { title: "Gestão integrada", detail: "Financeiro, administração e operação" },
-  { title: "Até 16 unidades", detail: "Planos para pequenos condomínios" }
+  { title: "Gerente dedicado", detail: "Responsável pela rotina" },
+  { title: "Conta do condomínio", detail: "Gestão financeira individualizada" },
+  { title: "Portal do morador", detail: "Informações acessíveis" },
+  { title: "ABCDM + Grande SP", detail: "Presença regional" }
 ];
 
 export function AuthorityBar() {

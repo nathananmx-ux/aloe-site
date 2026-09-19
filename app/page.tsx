@@ -1,5 +1,7 @@
+import type { Metadata } from "next";
 import { AboutSection } from "@/components/AboutSection";
 import { AuthorityBar } from "@/components/AuthorityBar";
+import { CaseStudiesSection } from "@/components/CaseStudiesSection";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
@@ -13,6 +15,7 @@ import { TransitionSection } from "@/components/TransitionSection";
 import { TechnologySection } from "@/components/TechnologySection";
 import { SmallCondoSection } from "@/components/SmallCondoSection";
 import { FAQSection } from "@/components/FAQSection";
+import { VisualBreakSection } from "@/components/VisualBreakSection";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -24,14 +27,16 @@ export default function Home() {
         <Hero />
         <AuthorityBar />
         <ServicesSection />
+        <VisualBreakSection />
         <SpecialistSection />
         <ProblemSection />
         <MethodSection />
-        <TransitionSection />
         <TechnologySection />
         <SmallCondoSection />
         <PlansSection />
+        <TransitionSection />
         <AboutSection />
+        <CaseStudiesSection />
         <FAQSection />
         <FinalCTA />
       </main>
@@ -39,4 +44,3 @@ export default function Home() {
     </>
   );
 }
-import type { Metadata } from "next";
