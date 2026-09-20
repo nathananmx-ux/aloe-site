@@ -23,17 +23,20 @@ export const logo = {
   alt: "Logo Aloe Condomínios"
 };
 
-export const navItems = [
-  { label: "Início", href: "/#inicio" },
-  { label: "Quem Somos", href: "/#quem-somos" },
-  { label: "Implantação", href: "/implantacao" },
+export const primaryNavItems = [
+  { label: "Administração", href: "/#administracao" },
   { label: "Pequenos condomínios", href: "/pequenos-condominios" },
-  { label: "Troca de administradora", href: "/troca-de-administradora" },
   { label: "Planos", href: "/planos" },
+  { label: "Implantação", href: "/implantacao" },
+  { label: "Quem somos", href: "/#quem-somos" }
+] as const;
+
+export const footerNavItems = [
+  ...primaryNavItems,
   { label: "Área do Cliente", href: "/area-do-cliente" },
-  { label: "Boletos", href: "/boletos", featured: true },
+  { label: "Boletos", href: "/boletos" },
   { label: "Contato", href: "/#contato" }
-];
+] as const;
 
 export const managementIndicators = [
   "Prestação de contas organizada",

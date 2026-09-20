@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { ArrowUpRight, Building2, Sparkles, Wrench } from "lucide-react";
-import { temporaryMedia } from "@/data/media";
+import { mediaMap } from "@/data/media";
 
 const services = [
   { label: "Administração", icon: Building2 },
@@ -14,8 +14,8 @@ export function SmallCondoSection() {
       <div className="section-shell grid overflow-hidden bg-white lg:grid-cols-[1.02fr_0.98fr]">
         <div className="relative min-h-[360px] lg:min-h-[610px]">
           <Image
-            src={temporaryMedia.smallCondo.src}
-            alt={temporaryMedia.smallCondo.alt}
+            src={mediaMap.home.smallCondominiums.src}
+            alt={mediaMap.home.smallCondominiums.alt}
             fill
             loading="lazy"
             sizes="(max-width: 1023px) 100vw, 52vw"

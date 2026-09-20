@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import {
+  AppWindow,
   Landmark,
   MessageSquareText,
   WalletCards
@@ -23,14 +24,21 @@ const accessItems = [
     icon: WalletCards
   },
   {
-    title: "Acessar Condopay",
+    title: "CondoNow / Portal do Morador",
+    text: "Acesse boletos, balancetes, comunicados e documentos disponibilizados para o seu condomínio.",
+    href: "https://www.uniondata.com.br/condonow/",
+    external: true,
+    icon: AppWindow
+  },
+  {
+    title: "Condopay",
     text: "Atalho para condomínios que utilizam a plataforma Condopay/Condoconta.",
     href: "https://condopay.condoconta.com.br",
     external: true,
     icon: Landmark
   },
   {
-    title: "Atendimento Aloe",
+    title: "Falar com a Aloe",
     text: "Tire dúvidas e solicite suporte administrativo pelo WhatsApp da equipe.",
     href: contact.whatsappHref,
     external: true,
@@ -59,7 +67,7 @@ export default function AreaDoClientePage() {
         </section>
 
         <section className="py-10 md:py-12">
-          <div className="section-shell grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+          <div className="section-shell grid gap-5 md:grid-cols-2">
             {accessItems.map((item) => {
               const Icon = item.icon;
 

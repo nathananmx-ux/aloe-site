@@ -1,4 +1,4 @@
-import { contact, navItems } from "@/data/home";
+import { contact, footerNavItems } from "@/data/home";
 import { BrandMark } from "./BrandMark";
 
 export function Footer() {
@@ -17,7 +17,7 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-bold text-ink">Links rápidos</h2>
           <nav className="mt-4 flex flex-col gap-3" aria-label="Links do rodapé">
-            {navItems.map((item) => (
+            {footerNavItems.map((item) => (
               <a
                 key={item.href}
                 href={item.href}

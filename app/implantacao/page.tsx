@@ -3,6 +3,7 @@ import Image from "next/image";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { mediaMap } from "@/data/media";
 
 export const metadata: Metadata = {
   title: "Implantação condominial | Aloe Condomínios",
@@ -11,16 +12,24 @@ export const metadata: Metadata = {
   alternates: { canonical: "/implantacao" }
 };
 
-const steps = [
-  "Reunião inicial de implantação",
-  "Levantamento de documentos",
-  "Definição dos primeiros itens administrativos",
-  "Organização de CNPJ e conta bancária",
-  "Estruturação de boletos e cobranças",
-  "Apoio na comunicação com moradores",
-  "Alinhamento com construtora, síndico e conselho",
-  "Planejamento da rotina operacional"
-];
+const audiences = [
+  "Condomínios recém-entregues",
+  "Condomínios ainda sem estrutura administrativa",
+  "Transição de construtora"
+] as const;
+
+const structuredItems = [
+  "CNPJ",
+  "Conta bancária",
+  "Cadastros",
+  "Boletos",
+  "Fornecedores",
+  "Documentação",
+  "Comunicação",
+  "Rotina financeira"
+] as const;
+
+const startingSteps = ["Reunião", "Documentação", "Implantação", "Comunicação", "Operação"] as const;
 
 export default function ImplantacaoPage() {
   return (
@@ -30,8 +39,8 @@ export default function ImplantacaoPage() {
         <section className="relative isolate overflow-hidden border-b border-moss/10 bg-paper">
           <div className="absolute inset-x-0 top-0 -z-10 h-64 md:inset-0 md:h-full">
             <Image
-              src="/images/implantacao-condominio.png"
-              alt="Imagem ilustrativa da entrada de um condomínio recém-entregue"
+              src={mediaMap.implantation.hero.src}
+              alt={mediaMap.implantation.hero.alt}
               fill
               priority
               sizes="100vw"
@@ -57,42 +66,51 @@ export default function ImplantacaoPage() {
         </section>
 
         <section className="py-16 md:py-20">
-          <div className="section-shell grid gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:gap-20">
-            <div>
-              <h2 className="font-serif text-3xl font-semibold text-ink">
-                Estrutura para começar com clareza.
-              </h2>
-              <p className="mt-5 leading-7 text-graphite/75">
-                A implantação é o momento em que o condomínio precisa estruturar
-                sua rotina: dados cadastrais, CNPJ, organização financeira,
-                boletos, conta bancária, comunicação com moradores, primeiros
-                prestadores e alinhamento com síndico, conselho ou construtora.
-              </p>
-              <p className="mt-4 leading-7 text-graphite/75">
-                A Aloe atua nesse processo para que o condomínio seja entregue
-                com uma administração já estruturada, reduzindo improvisos e
-                facilitando o início da operação.
-              </p>
+          <div className="section-shell">
+            <div className="grid gap-12 border-b border-moss/20 pb-14 lg:grid-cols-[0.8fr_1.2fr] lg:gap-20">
+              <div>
+                <p className="eyebrow">Para quem é</p>
+                <h2 className="mt-4 font-serif text-3xl font-semibold text-ink md:text-4xl">
+                  Estrutura para começar com clareza.
+                </h2>
+                <ul className="mt-7 border-t border-moss/20">
+                  {audiences.map((item, index) => (
+                    <li key={item} className="flex gap-4 border-b border-moss/20 py-4 text-sm font-semibold text-graphite/80">
+                      <span className="font-serif text-lg text-bronze">0{index + 1}</span>{item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div>
+                <p className="eyebrow">O que é estruturado</p>
+                <div className="mt-7 grid border-t border-moss/20 sm:grid-cols-2">
+                  {structuredItems.map((item, index) => (
+                    <div key={item} className="flex gap-4 border-b border-moss/20 py-4 sm:odd:pr-6 sm:even:border-l sm:even:pl-6">
+                      <span className="font-serif text-lg text-bronze">{String(index + 1).padStart(2, "0")}</span>
+                      <span className="text-sm font-semibold text-graphite/80">{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="pt-14">
+              <p className="eyebrow">Como começa</p>
+              <ol className="mt-7 grid border-y border-moss/20 sm:grid-cols-5">
+                {startingSteps.map((step, index) => (
+                  <li key={step} className="border-b border-moss/20 px-4 py-5 last:border-b-0 sm:border-b-0 sm:border-r sm:last:border-r-0">
+                    <span className="font-serif text-xl text-bronze">{String(index + 1).padStart(2, "0")}</span>
+                    <p className="mt-2 text-sm font-semibold text-ink">{step}</p>
+                  </li>
+                ))}
+              </ol>
               <div className="mt-8">
                 <ButtonLink href="/#contato" dataEvent="click_solicitar_proposta">
                   Solicitar implantação com a Aloe
                 </ButtonLink>
               </div>
             </div>
-
-            <ol className="grid border-t border-moss/20 sm:grid-cols-2">
-              {steps.map((step, index) => (
-                <li
-                  key={step}
-                  className="grid min-w-0 grid-cols-[2.25rem_minmax(0,1fr)] gap-3 border-b border-moss/20 py-5 sm:odd:pr-5 sm:even:border-l sm:even:pl-5"
-                >
-                  <span className="font-serif text-xl text-bronze">{String(index + 1).padStart(2, "0")}</span>
-                  <span className="text-sm font-semibold leading-6 text-graphite">
-                    {step}
-                  </span>
-                </li>
-              ))}
-            </ol>
           </div>
         </section>
       </main>

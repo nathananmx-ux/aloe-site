@@ -2,15 +2,8 @@
 
 import { Menu, UserRound, X } from "lucide-react";
 import { useState } from "react";
+import { primaryNavItems } from "@/data/home";
 import { BrandMark } from "./BrandMark";
-
-const links = [
-  { label: "Administração", href: "/#administracao" },
-  { label: "Pequenos condomínios", href: "/pequenos-condominios" },
-  { label: "Como trabalhamos", href: "/#metodo" },
-  { label: "Planos", href: "/planos" },
-  { label: "Quem somos", href: "/#quem-somos" }
-];
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -22,7 +15,7 @@ export function Header() {
           <BrandMark compact />
         </a>
         <nav className="hidden items-center gap-4 xl:flex" aria-label="Menu principal">
-          {links.map((item) => (
+          {primaryNavItems.map((item) => (
             <a key={item.href} href={item.href} className="focus-ring whitespace-nowrap text-xs font-semibold text-graphite/75 hover:text-moss 2xl:text-sm">
               {item.label}
             </a>
@@ -49,7 +42,7 @@ export function Header() {
       </div>
       {open && (
         <nav id="aloe-mobile-menu" className="section-shell grid max-h-[calc(100svh-64px)] gap-1 overflow-y-auto border-t border-moss/10 py-3 xl:hidden" aria-label="Menu mobile">
-          {[...links, { label: "Implantação", href: "/implantacao" }, { label: "Trocar de administradora", href: "/troca-de-administradora" }, { label: "Área do Cliente", href: "/area-do-cliente" }, { label: "Boletos", href: "/boletos" }].map((item) => (
+          {[...primaryNavItems, { label: "Área do Cliente", href: "/area-do-cliente" }].map((item) => (
             <a key={item.href} href={item.href} className="focus-ring rounded-sm px-2 py-2.5 text-sm font-semibold text-graphite" onClick={() => setOpen(false)}>
               {item.label}
             </a>

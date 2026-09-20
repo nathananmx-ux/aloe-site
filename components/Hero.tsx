@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { temporaryMedia } from "@/data/media";
+import { mediaMap } from "@/data/media";
 
 const AUTOPLAY_DELAY = 6500;
 
@@ -14,8 +14,8 @@ const slides = [
     description:
       "Gestão financeira, administrativa e operacional com acompanhamento próximo e uma equipe responsável pela rotina do seu condomínio.",
     support: "ABCDM e Grande São Paulo",
-    image: "/images/aloe-diretoria-hero.jpg",
-    imageAlt: "Diretores da Aloe Administradora de Condomínios",
+    image: mediaMap.home.heroInstitutional.src,
+    imageAlt: mediaMap.home.heroInstitutional.alt,
     primary: { label: "Solicitar uma proposta", href: "/#contato" },
     secondary: { label: "Conhecer a Aloe", href: "/#quem-somos" },
     imageClass: "hero-directors-image"
@@ -25,8 +25,8 @@ const slides = [
     title: "Seu condomínio é pequeno. A administração não precisa ser improvisada.",
     description:
       "Planos especiais para condomínios de até 16 unidades, combinando administração, limpeza e manutenção conforme a necessidade.",
-    image: temporaryMedia.smallCondo.src,
-    imageAlt: temporaryMedia.smallCondo.alt,
+    image: mediaMap.home.heroSmallCondo.src,
+    imageAlt: mediaMap.home.heroSmallCondo.alt,
     primary: { label: "Conhecer os planos", href: "/planos" },
     imageClass: "hero-condo-image"
   },
@@ -35,8 +35,8 @@ const slides = [
     title: "Administração que vai além do boleto.",
     description:
       "Gestão administrativa, limpeza e serviços de manutenção podem fazer parte de uma única solução.",
-    image: temporaryMedia.residentialHall.src,
-    imageAlt: temporaryMedia.residentialHall.alt,
+    image: mediaMap.home.heroManagement.src,
+    imageAlt: mediaMap.home.heroManagement.alt,
     primary: { label: "Comparar os planos", href: "/planos" },
     imageClass: "hero-complete-image"
   }

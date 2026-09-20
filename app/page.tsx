@@ -8,14 +8,11 @@ import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { MethodSection } from "@/components/MethodSection";
 import { PlansSection } from "@/components/PlansSection";
-import { ProblemSection } from "@/components/ProblemSection";
 import { ServicesSection } from "@/components/ServicesSection";
 import { SpecialistSection } from "@/components/SpecialistSection";
-import { TransitionSection } from "@/components/TransitionSection";
 import { TechnologySection } from "@/components/TechnologySection";
 import { SmallCondoSection } from "@/components/SmallCondoSection";
 import { FAQSection } from "@/components/FAQSection";
-import { VisualBreakSection } from "@/components/VisualBreakSection";
 
 export const metadata: Metadata = { alternates: { canonical: "/" } };
 
@@ -27,14 +24,11 @@ export default function Home() {
         <Hero />
         <AuthorityBar />
         <ServicesSection />
-        <VisualBreakSection />
         <SpecialistSection />
-        <ProblemSection />
         <MethodSection />
         <TechnologySection />
         <SmallCondoSection />
         <PlansSection />
-        <TransitionSection />
         <AboutSection />
         <CaseStudiesSection />
         <FAQSection />

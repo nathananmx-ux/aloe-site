@@ -3,44 +3,44 @@
 import Image from "next/image";
 import { ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { temporaryMedia } from "@/data/media";
+import { mediaMap } from "@/data/media";
 
 const areas = [
   {
     number: "01",
     title: "Financeiro",
     text: "Boletos, pagamentos, despesas e prestação de contas.",
-    image: temporaryMedia.administration
+    image: mediaMap.home.organize.financial
   },
   {
     number: "02",
     title: "Administrativo",
     text: "Cadastros, documentos, contratos e histórico.",
-    image: temporaryMedia.administration
+    image: mediaMap.home.organize.administrative
   },
   {
     number: "03",
     title: "Assembleias",
     text: "Editais, pautas, atas e acompanhamento das decisões.",
-    image: temporaryMedia.assembly
+    image: mediaMap.home.organize.assemblies
   },
   {
     number: "04",
     title: "Cobrança",
     text: "Acompanhamento de inadimplência e apoio às medidas cabíveis.",
-    image: temporaryMedia.administration
+    image: mediaMap.home.organize.collection
   },
   {
     number: "05",
     title: "Operação",
     text: "Fornecedores, orçamentos, manutenção e serviços contratados.",
-    image: temporaryMedia.residentialHall
+    image: mediaMap.home.organize.operations
   },
   {
     number: "06",
     title: "Comunicação",
     text: "Interlocução organizada com síndico, conselho e moradores.",
-    image: temporaryMedia.commonArea
+    image: mediaMap.home.organize.communication
   }
 ];
 

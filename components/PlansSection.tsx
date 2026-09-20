@@ -1,14 +1,12 @@
-import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { plans } from "@/data/plans";
-import { temporaryMedia } from "@/data/media";
 
 const visualMessages = [
-  { message: "Administração", image: temporaryMedia.administration },
-  { message: "Administração + limpeza", image: temporaryMedia.commonArea },
-  { message: "Maior frequência de limpeza", image: temporaryMedia.commonArea },
-  { message: "Administração + limpeza + manutenção", image: temporaryMedia.residentialHall },
-  { message: "Gestão mais completa", image: temporaryMedia.residentialHall }
+  "Administração",
+  "Administração + limpeza",
+  "Maior frequência de limpeza",
+  "Administração + limpeza + manutenção",
+  "Gestão mais completa"
 ];
 
 export function PlansSection() {
@@ -29,24 +27,12 @@ export function PlansSection() {
 
         <div className="mt-12 grid grid-cols-2 border-y border-moss/20 lg:grid-cols-5">
           {plans.map((plan, index) => {
-            const visual = visualMessages[index];
             return (
-              <article key={plan.name} className="group border-b border-r border-moss/15 p-3 even:border-r-0 sm:p-4 lg:border-b-0 lg:border-r lg:even:border-r lg:last:border-r-0">
-                <div className="relative aspect-[4/3] overflow-hidden bg-mist">
-                  <Image
-                    src={visual.image.src}
-                    alt=""
-                    fill
-                    loading="lazy"
-                    sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 220px"
-                    className="object-cover transition duration-500 group-hover:scale-[1.035]"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-ink/60 to-transparent" aria-hidden="true" />
-                  <span className="absolute bottom-3 left-3 text-xs font-bold uppercase text-white">Nível {plan.level}</span>
-                </div>
-                <p className="mt-5 text-xs font-bold uppercase text-bronze">{plan.badge}</p>
+              <article key={plan.name} className="min-h-64 border-b border-r border-moss/15 p-5 even:border-r-0 sm:p-6 lg:border-b-0 lg:border-r lg:even:border-r lg:last:border-r-0">
+                <span className="font-serif text-2xl text-bronze">{String(plan.level).padStart(2, "0")}</span>
+                <p className="mt-8 text-xs font-bold uppercase text-bronze">{plan.badge}</p>
                 <h3 className="mt-1 font-serif text-3xl text-ink">{plan.name}</h3>
-                <p className="mt-3 text-xs font-bold uppercase leading-5 text-moss">{visual.message}</p>
+                <p className="mt-5 border-t border-moss/15 pt-5 text-xs font-bold uppercase leading-5 text-moss">{visualMessages[index]}</p>
               </article>
             );
           })}

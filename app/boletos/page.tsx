@@ -14,8 +14,8 @@ export const metadata: Metadata = {
 
 const boletoOptions = [
   {
-    title: "Boleto",
-    text: "Use esta opção para acessar boletos emitidos pelo sistema tradicional da administradora.",
+    title: "Boleto Aloe",
+    text: "Use esta opção para acessar boletos emitidos pelo sistema tradicional utilizado pela Aloe.",
     button: "Acessar boleto",
     href: "https://www.uniondata.com.br/boletoExpress/go.ud?id=442&hash=7400a0876647009a8a5617a9d9caf72fe916efd3",
     icon: WalletCards
