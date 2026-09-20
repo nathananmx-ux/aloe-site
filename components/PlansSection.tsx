@@ -7,8 +7,8 @@ const visualMessages = [
   { message: "Administração", image: temporaryMedia.administration },
   { message: "Administração + limpeza", image: temporaryMedia.commonArea },
   { message: "Maior frequência de limpeza", image: temporaryMedia.commonArea },
-  { message: "Administração + limpeza + manutenção", image: temporaryMedia.maintenance },
-  { message: "Gestão mais completa", image: temporaryMedia.maintenance }
+  { message: "Administração + limpeza + manutenção", image: temporaryMedia.residentialHall },
+  { message: "Gestão mais completa", image: temporaryMedia.residentialHall }
 ];
 
 export function PlansSection() {

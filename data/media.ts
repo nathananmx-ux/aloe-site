@@ -17,11 +17,17 @@ export const temporaryMedia = {
     alt: "Área comum iluminada de um edifício residencial",
     source: "Pexels photo 18123382"
   },
-  // TEMPORARY_MEDIA: maintenance-section
-  maintenance: {
-    src: "/images/temporary-maintenance.jpg",
-    alt: "Manutenção preventiva em instalação elétrica",
-    source: "Pexels photo 257736"
+  // TEMPORARY_MEDIA: residential-hall
+  residentialHall: {
+    src: "/images/temporary-residential-hall.jpg",
+    alt: "Corredor residencial bem conservado com madeira e vegetação",
+    source: "Pexels photo 6296916"
+  },
+  // TEMPORARY_MEDIA: assembly-editorial
+  assembly: {
+    src: "/images/temporary-assembly-work.jpg",
+    alt: "Reunião vista de cima com relatórios e documentos organizados",
+    source: "Pexels photo 7109315"
   }
 } as const;
 

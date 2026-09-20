@@ -3,7 +3,9 @@
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
-import { condoNowMedia, temporaryMedia } from "@/data/media";
+import { temporaryMedia } from "@/data/media";
+
+const AUTOPLAY_DELAY = 6500;
 
 const slides = [
   {
@@ -16,7 +18,7 @@ const slides = [
     imageAlt: "Diretores da Aloe Administradora de Condomínios",
     primary: { label: "Solicitar uma proposta", href: "/#contato" },
     secondary: { label: "Conhecer a Aloe", href: "/#quem-somos" },
-    kind: "photo"
+    imageClass: "hero-directors-image"
   },
   {
     eyebrow: "Especialistas em pequenos condomínios",
@@ -26,39 +28,30 @@ const slides = [
     image: temporaryMedia.smallCondo.src,
     imageAlt: temporaryMedia.smallCondo.alt,
     primary: { label: "Conhecer os planos", href: "/planos" },
-    kind: "photo"
-  },
-  {
-    eyebrow: "Portal do Morador • Tecnologia CondoNow",
-    title: "O condomínio na palma da mão.",
-    description:
-      "Informações importantes disponíveis de forma organizada para facilitar a rotina dos moradores.",
-    primary: { label: "Conhecer como funciona", href: "/#tecnologia" },
-    kind: "technology"
+    imageClass: "hero-condo-image"
   },
   {
     eyebrow: "Gestão administrativa e operacional",
     title: "Administração que vai além do boleto.",
     description:
-      "Planos que podem integrar gestão administrativa, limpeza e serviços de manutenção em uma única solução.",
-    image: temporaryMedia.maintenance.src,
-    imageAlt: temporaryMedia.maintenance.alt,
+      "Gestão administrativa, limpeza e serviços de manutenção podem fazer parte de uma única solução.",
+    image: temporaryMedia.residentialHall.src,
+    imageAlt: temporaryMedia.residentialHall.alt,
     primary: { label: "Comparar os planos", href: "/planos" },
-    kind: "photo"
+    imageClass: "hero-complete-image"
   }
 ] as const;
 
 const buttonBase =
-  "focus-ring inline-flex min-h-12 items-center justify-center rounded-md px-5 py-3 text-sm font-semibold transition";
+  "focus-ring inline-flex min-h-12 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition";
 
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
-  const [manualPause, setManualPause] = useState(false);
+  const [manualMode, setManualMode] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
   const touchStartX = useRef<number | null>(null);
-  const resumeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -70,27 +63,18 @@ export function Hero() {
 
   const moveTo = useCallback((index: number, fromInteraction = false) => {
     setActiveIndex((index + slides.length) % slides.length);
-    if (!fromInteraction) return;
-
-    setManualPause(true);
-    if (resumeTimer.current) clearTimeout(resumeTimer.current);
-    resumeTimer.current = setTimeout(() => setManualPause(false), 9000);
+    if (fromInteraction) setManualMode(true);
   }, []);
 
+  const autoplayActive = !hovered && !focused && !manualMode && !reducedMotion;
+
   useEffect(() => {
-    if (hovered || focused || manualPause || reducedMotion) return;
+    if (!autoplayActive) return;
     const timer = setInterval(() => {
       setActiveIndex((current) => (current + 1) % slides.length);
-    }, 6000);
+    }, AUTOPLAY_DELAY);
     return () => clearInterval(timer);
-  }, [focused, hovered, manualPause, reducedMotion]);
-
-  useEffect(
-    () => () => {
-      if (resumeTimer.current) clearTimeout(resumeTimer.current);
-    },
-    []
-  );
+  }, [autoplayActive]);
 
   return (
     <section
@@ -119,7 +103,6 @@ export function Hero() {
       <div className="relative min-h-[650px] md:min-h-[min(720px,78svh)]">
         {slides.map((slide, index) => {
           const isActive = index === activeIndex;
-          const isTechnology = slide.kind === "technology";
 
           return (
             <article
@@ -128,52 +111,38 @@ export function Hero() {
               aria-hidden={!isActive}
               aria-label={`${index + 1} de ${slides.length}`}
             >
-              {!isTechnology && "image" in slide ? (
-                <>
-                  <Image
-                    src={slide.image}
-                    alt={slide.imageAlt}
-                    fill
-                    priority={index === 0}
-                    loading={index === 0 ? "eager" : "lazy"}
-                    sizes="100vw"
-                    className={`object-cover ${index === 0 ? "hero-directors-image" : index === 1 ? "hero-condo-image" : "hero-maintenance-image"}`}
-                  />
-                  <div className="hero-carousel-overlay absolute inset-0" aria-hidden="true" />
-                </>
-              ) : (
-                <div className="absolute inset-0 bg-moss" aria-hidden="true">
-                  <div className="hero-technology-pattern absolute inset-0" />
-                </div>
-              )}
+              <Image
+                src={slide.image}
+                alt={slide.imageAlt}
+                fill
+                priority={index === 0}
+                loading={index === 0 ? "eager" : "lazy"}
+                sizes="100vw"
+                className={`object-cover ${slide.imageClass}`}
+              />
+              <div className="hero-carousel-overlay absolute inset-0" aria-hidden="true" />
 
-              {isTechnology ? (
-                <div className="absolute right-[-2.5rem] top-24 h-[340px] w-[190px] rotate-6 overflow-hidden rounded-[1.25rem] border-[6px] border-[#17231f] bg-white opacity-20 shadow-2xl lg:hidden" aria-hidden="true">
-                  <Image src={condoNowMedia[0].src} alt="" width={380} height={675} sizes="190px" className="h-full w-full object-cover object-top" />
-                </div>
-              ) : null}
-
-              <div className={`section-shell relative grid min-h-[650px] items-center gap-10 py-20 md:min-h-[min(720px,78svh)] lg:grid-cols-[0.95fr_1.05fr] ${isTechnology ? "lg:gap-16" : ""}`}>
-                <div className={`max-w-[680px] ${isTechnology ? "pt-4" : ""}`}>
+              <div className="section-shell relative grid min-h-[650px] items-start pb-32 pt-12 md:min-h-[min(720px,78svh)] md:pb-28 md:pt-14">
+                <div className="max-w-[760px]">
                   <p className="mb-5 inline-flex border-l-2 border-bronze pl-3 text-xs font-bold uppercase text-[#e6c498] sm:text-sm">
                     {slide.eyebrow}
                   </p>
                   {index === 0 ? (
-                    <h1 className="font-serif text-[2.65rem] font-semibold leading-[1.02] text-white sm:text-5xl lg:text-[4rem]">
+                    <h1 className="font-serif text-[2.65rem] font-semibold leading-[1.02] text-white sm:text-5xl lg:text-[3.75rem]">
                       {slide.title}
                     </h1>
                   ) : (
-                    <h2 className="font-serif text-[2.65rem] font-semibold leading-[1.02] text-white sm:text-5xl lg:text-[4rem]">
+                    <h2 className={`font-serif font-semibold leading-[1.02] text-white ${index === 1 ? "text-[2.35rem] sm:text-[2.9rem] lg:text-[3.25rem]" : "text-[2.65rem] sm:text-5xl lg:text-[3.75rem]"}`}>
                       {slide.title}
                     </h2>
                   )}
-                  <p className="mt-6 max-w-[610px] text-base leading-7 text-white/90 md:text-lg md:leading-8">
+                  <p className="mt-5 max-w-[610px] text-base leading-7 text-white/90 md:text-lg md:leading-8">
                     {slide.description}
                   </p>
                   {"support" in slide ? (
-                    <p className="mt-4 text-sm font-semibold text-white/75">{slide.support}</p>
+                    <p className="mt-3 text-sm font-semibold text-white/75">{slide.support}</p>
                   ) : null}
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                  <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                     <a
                       href={slide.primary.href}
                       data-event={index === 0 ? "click_solicitar_proposta" : undefined}
@@ -194,55 +163,58 @@ export function Hero() {
                     ) : null}
                   </div>
                 </div>
-
-                {isTechnology ? (
-                  <div className="hero-phone-stage hidden items-end justify-center lg:flex" aria-label="Telas oficiais do CondoNow">
-                    {condoNowMedia.slice(0, 3).map((screen, screenIndex) => (
-                      <div
-                        key={screen.src}
-                        className={`hero-phone hero-phone-${screenIndex + 1} relative overflow-hidden rounded-[1.5rem] border-[7px] border-[#17231f] bg-white shadow-2xl`}
-                      >
-                        <Image src={screen.src} alt={screen.alt} width={380} height={675} sizes="240px" className="h-full w-full object-cover object-top" />
-                      </div>
-                    ))}
-                  </div>
-                ) : null}
               </div>
             </article>
           );
         })}
 
-        <div className="section-shell pointer-events-none absolute inset-x-0 bottom-6 z-20 flex items-center justify-between">
-          <div className="pointer-events-auto flex items-center gap-2" role="tablist" aria-label="Escolher destaque">
-            {slides.map((slide, index) => (
+        <div className="section-shell pointer-events-none absolute inset-x-0 bottom-5 z-20 flex justify-center md:bottom-7 md:justify-end">
+          <div className="pointer-events-auto flex items-center gap-4 border-t border-white/25 pt-3" aria-label="Navegação do carrossel">
+            <div className="flex items-center gap-3" role="tablist" aria-label="Escolher destaque">
+              {slides.map((slide, index) => {
+                const isActive = activeIndex === index;
+                return (
+                  <button
+                    key={slide.title}
+                    type="button"
+                    role="tab"
+                    aria-selected={isActive}
+                    aria-label={`Mostrar slide ${index + 1}`}
+                    onClick={() => moveTo(index, true)}
+                    className={`focus-ring flex items-center gap-2 py-1 text-xs font-bold transition ${isActive ? "text-white" : "text-white/55 hover:text-white"}`}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                    {isActive ? (
+                      <span className="hero-progress-track block h-px w-10 overflow-hidden bg-white/30 sm:w-14" aria-hidden="true">
+                        <span
+                          key={`${activeIndex}-${autoplayActive}`}
+                          className={`hero-progress-fill block h-full bg-bronze ${autoplayActive ? "is-running" : "is-static"}`}
+                        />
+                      </span>
+                    ) : null}
+                  </button>
+                );
+              })}
+            </div>
+            <span className="h-5 w-px bg-white/25" aria-hidden="true" />
+            <div className="flex gap-1">
               <button
-                key={slide.title}
                 type="button"
-                role="tab"
-                aria-selected={activeIndex === index}
-                aria-label={`Mostrar slide ${index + 1}`}
-                onClick={() => moveTo(index, true)}
-                className={`focus-ring h-2.5 rounded-full transition-all ${activeIndex === index ? "w-9 bg-bronze" : "w-2.5 bg-white/55 hover:bg-white"}`}
-              />
-            ))}
-          </div>
-          <div className="pointer-events-auto flex gap-2">
-            <button
-              type="button"
-              aria-label="Slide anterior"
-              onClick={() => moveTo(activeIndex - 1, true)}
-              className="focus-ring grid size-11 place-items-center rounded-full border border-white/30 bg-ink/35 text-white backdrop-blur-sm transition hover:bg-white hover:text-moss"
-            >
-              <ChevronLeft size={20} aria-hidden="true" />
-            </button>
-            <button
-              type="button"
-              aria-label="Próximo slide"
-              onClick={() => moveTo(activeIndex + 1, true)}
-              className="focus-ring grid size-11 place-items-center rounded-full border border-white/30 bg-ink/35 text-white backdrop-blur-sm transition hover:bg-white hover:text-moss"
-            >
-              <ChevronRight size={20} aria-hidden="true" />
-            </button>
+                aria-label="Slide anterior"
+                onClick={() => moveTo(activeIndex - 1, true)}
+                className="focus-ring grid size-9 place-items-center text-white/75 transition hover:text-bronze"
+              >
+                <ChevronLeft size={20} aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                aria-label="Próximo slide"
+                onClick={() => moveTo(activeIndex + 1, true)}
+                className="focus-ring grid size-9 place-items-center text-white/75 transition hover:text-bronze"
+              >
+                <ChevronRight size={20} aria-hidden="true" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
