@@ -24,7 +24,7 @@ export const logo = {
 };
 
 export const primaryNavItems = [
-  { label: "Administração", href: "/#administracao" },
+  { label: "Administração", href: "/administracao" },
   { label: "Pequenos condomínios", href: "/pequenos-condominios" },
   { label: "Planos", href: "/planos" },
   { label: "Implantação", href: "/implantacao" },

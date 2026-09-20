@@ -59,11 +59,77 @@ export const mediaMap = {
       source: "Pexels photo 32194032"
     }
   },
+  administration: {
+    hero: {
+      src: "/images/administracao-hero.jpg",
+      alt: "Entrada de edifício residencial acompanhada pela administração",
+      source: "Pexels photo 31406338"
+    },
+    financial: {
+      src: "/images/administracao-financeiro.jpg",
+      alt: "Documentos e notebook em uma rotina de controle financeiro",
+      source: "Pexels photo 7545311"
+    },
+    assemblies: {
+      src: "/images/administracao-assembleias.jpg",
+      alt: "Sala preparada para reunião e tomada de decisões",
+      source: "Pexels photo 13323677"
+    },
+    operations: {
+      src: "/images/administracao-operacao.jpg",
+      alt: "Hall residencial organizado e bem conservado",
+      source: "Pexels photo 7031907"
+    }
+  },
+  smallCondominiumsPage: {
+    hero: {
+      src: "/images/pequenos-hero.jpg",
+      alt: "Condomínio residencial de pequeno porte com jardim",
+      source: "Pexels photo 35304920"
+    },
+    base: {
+      src: "/images/pequenos-base.jpg",
+      alt: "Área de circulação residencial limpa e organizada",
+      source: "Pexels photo 6903159"
+    },
+    services: {
+      src: "/images/pequenos-servicos.jpg",
+      alt: "Área comum residencial conservada e iluminada",
+      source: "Pexels photo 35179884"
+    },
+    conservation: {
+      src: "/images/pequenos-conservacao.jpg",
+      alt: "Edifício residencial de pequeno porte cercado por área verde",
+      source: "Pexels photo 31944646"
+    }
+  },
+  plans: {
+    hero: {
+      src: "/images/planos-hero.jpg",
+      alt: "Conjunto residencial com áreas comuns ajardinadas",
+      source: "Pexels photo 34360413"
+    },
+    evolution: {
+      src: "/images/planos-evolucao.jpg",
+      alt: "Condomínio residencial com fachada e paisagismo conservados",
+      source: "Pexels photo 28463539"
+    }
+  },
   implantation: {
     hero: {
       src: "/images/implantacao-condominio.png",
       alt: "Entrada de um condomínio recém-entregue",
       source: "Acervo Aloe"
+    },
+    structure: {
+      src: "/images/implantacao-estrutura.jpg",
+      alt: "Entrada organizada de um empreendimento residencial",
+      source: "Pexels photo 8082198"
+    },
+    process: {
+      src: "/images/implantacao-processo.jpg",
+      alt: "Documentos preparados para o início da implantação",
+      source: "Pexels photo 9869392"
     }
   }
 } as const;
