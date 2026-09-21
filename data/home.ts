@@ -169,8 +169,8 @@ export const partners = [
   {
     name: "Leonardo Sandovette",
     role: "COO",
-    image: "/images/leonardo-sandovette.jpg",
-    imageClassName: "object-[center_58%]",
+    image: "/images/leonardo-sandovette-retrato.png",
+    imageClassName: "object-center",
     description:
       "Pós-graduado em Administração, com ênfase em finanças, síndico profissional e responsável pela estrutura administrativa e pelo backoffice da Aloe.",
     areas: ["Finanças", "Administração", "Backoffice"]
