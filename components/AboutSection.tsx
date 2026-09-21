@@ -32,7 +32,7 @@ export function AboutSection() {
               <p className="text-sm font-bold uppercase text-bronze">Liderança Aloe</p>
               <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl md:text-5xl">Quem está à frente da Aloe.</h2>
             </div>
-            <p className="max-w-sm font-serif text-2xl text-white/75 md:text-right">Duas competências complementares. Uma única gestão.</p>
+            <p className="max-w-[23rem] text-balance text-lg leading-7 text-white/75 md:justify-self-end">Competências complementares para uma gestão completa.</p>
           </div>
 
           <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-0">
