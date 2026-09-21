@@ -23,19 +23,19 @@
 }
 
 html[data-theme="dark"] {
-  --color-paper: 13 17 16;
-  --color-porcelain: 19 25 23;
-  --color-surface-elevated: 30 40 36;
-  --color-graphite: 184 191 186;
-  --color-ink: 243 242 237;
+  --color-paper: 17 19 21;
+  --color-porcelain: 23 26 29;
+  --color-surface-elevated: 36 42 47;
+  --color-graphite: 184 188 191;
+  --color-ink: 242 241 236;
   --color-moss: 143 167 158;
   --color-brand-solid: 23 75 61;
   --color-brand-hover: 32 97 79;
-  --color-deep: 9 43 35;
+  --color-deep: 15 61 50;
   --color-sage: 143 167 158;
   --color-bronze: 199 149 93;
-  --color-mist: 24 32 29;
-  --color-line: 43 53 49;
+  --color-mist: 29 33 37;
+  --color-line: 48 54 61;
   --shadow-color: 0 0 0;
   color-scheme: dark;
 }
@@ -58,10 +58,6 @@ body {
 
 html[data-theme="dark"] .bg-white {
   background-color: rgb(var(--color-porcelain));
-}
-
-html[data-theme="dark"] header {
-  background-color: rgb(var(--color-deep) / 0.96);
 }
 
 html[data-theme="dark"] footer {
