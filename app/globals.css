@@ -12,6 +12,7 @@
   --color-ink: 13 17 16;
   --color-moss: 15 61 50;
   --color-brand-solid: 15 61 50;
+  --color-brand-hover: 9 43 35;
   --color-deep: 7 20 17;
   --color-sage: 111 131 122;
   --color-bronze: 157 93 37;
@@ -22,18 +23,19 @@
 }
 
 html[data-theme="dark"] {
-  --color-paper: 11 21 18;
-  --color-porcelain: 16 34 28;
-  --color-surface-elevated: 22 48 39;
-  --color-graphite: 184 192 188;
-  --color-ink: 242 244 241;
-  --color-moss: 121 188 164;
-  --color-brand-solid: 24 82 67;
-  --color-deep: 6 15 12;
-  --color-sage: 151 169 161;
-  --color-bronze: 214 170 116;
-  --color-mist: 28 54 45;
-  --color-line: 40 68 58;
+  --color-paper: 13 17 16;
+  --color-porcelain: 19 25 23;
+  --color-surface-elevated: 30 40 36;
+  --color-graphite: 184 191 186;
+  --color-ink: 243 242 237;
+  --color-moss: 143 167 158;
+  --color-brand-solid: 23 75 61;
+  --color-brand-hover: 32 97 79;
+  --color-deep: 9 43 35;
+  --color-sage: 143 167 158;
+  --color-bronze: 199 149 93;
+  --color-mist: 24 32 29;
+  --color-line: 43 53 49;
   --shadow-color: 0 0 0;
   color-scheme: dark;
 }
@@ -56,6 +58,14 @@ body {
 
 html[data-theme="dark"] .bg-white {
   background-color: rgb(var(--color-porcelain));
+}
+
+html[data-theme="dark"] header {
+  background-color: rgb(var(--color-deep) / 0.96);
+}
+
+html[data-theme="dark"] footer {
+  background-color: rgb(var(--color-deep));
 }
 
 .theme-logo-dark {

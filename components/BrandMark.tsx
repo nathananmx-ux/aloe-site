@@ -1,6 +1,4 @@
 import Image from "next/image";
-import { logo } from "@/data/home";
-
 type BrandMarkProps = {
   compact?: boolean;
   light?: boolean;
@@ -11,15 +9,15 @@ export function BrandMark({ compact = false, light = false }: BrandMarkProps) {
     <span className="inline-flex items-center gap-2 sm:gap-3">
       <span className={`relative shrink-0 ${compact ? "h-8 w-8 sm:h-10 sm:w-10" : "h-12 w-12 sm:h-14 sm:w-14"}`}>
         <Image
-          src={logo.src}
-          alt={logo.alt}
+          src="/logo-aloe-light.svg"
+          alt="Logo Aloe Condomínios"
           fill
           sizes={compact ? "(max-width: 639px) 32px, 40px" : "56px"}
           className="theme-logo-light object-contain"
           priority={compact}
         />
         <Image
-          src="/logo-aloe-symbol.svg"
+          src="/logo-aloe-dark.svg"
           alt=""
           fill
           sizes={compact ? "(max-width: 639px) 32px, 40px" : "56px"}

@@ -26,7 +26,7 @@ export function Header() {
           <a href="/area-do-cliente" data-event="click_area_cliente" className="focus-ring inline-flex items-center gap-2 whitespace-nowrap text-xs font-semibold text-moss hover:underline 2xl:text-sm">
             <UserRound size={17} aria-hidden="true" /> Área do Cliente
           </a>
-          <a href="/#contato" data-event="click_solicitar_proposta" className="focus-ring inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-sm bg-brandSolid px-4 text-xs font-semibold text-white hover:bg-deep 2xl:text-sm">
+          <a href="/#contato" data-event="click_solicitar_proposta" className="focus-ring inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-sm bg-brandSolid px-4 text-xs font-semibold text-white hover:bg-brandHover 2xl:text-sm">
             Solicitar proposta
           </a>
           <ThemeToggle />

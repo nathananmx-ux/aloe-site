@@ -18,6 +18,7 @@ const config: Config = {
         ink: themed("ink"),
         moss: themed("moss"),
         brandSolid: themed("brand-solid"),
+        brandHover: themed("brand-hover"),
         deep: themed("deep"),
         sage: themed("sage"),
         bronze: themed("bronze"),
