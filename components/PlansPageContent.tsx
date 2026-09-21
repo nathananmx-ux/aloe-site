@@ -48,7 +48,7 @@ export function PlansPageContent() {
           <p className="mt-6 text-sm leading-6 text-graphite/65">Para condomínios de até 16 unidades, a proposta prevê o custeio da abertura do CNPJ pela Aloe, conforme a necessidade de regularização e as condições contratuais.</p>
         </div>
       </section>
-      <section className="bg-moss py-16 text-white md:py-24">
+      <section className="bg-deep py-16 text-white md:py-24">
         <div className="section-shell grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
           <div className="relative min-h-[400px] overflow-hidden lg:min-h-[570px]"><Image src={mediaMap.plans.evolution.src} alt={mediaMap.plans.evolution.alt} fill sizes="(min-width: 1024px) 54vw, 100vw" className="object-cover" /></div>
           <div><p className="text-sm font-bold uppercase text-bronze">Evolução dos serviços</p><h2 className="mt-4 font-serif text-4xl font-semibold leading-tight md:text-5xl">Do administrativo à rotina operacional.</h2><p className="mt-5 leading-7 text-white/70">A base de gestão permanece. O que evolui entre as modalidades é a frequência de limpeza e a inclusão de cuidados preventivos.</p><ol className="mt-8 border-t border-white/20">{["Administração", "Limpeza", "Manutenção", "Conservação"].map((item, index) => <li key={item} className="flex items-baseline gap-4 border-b border-white/20 py-4"><span className="font-serif text-xl text-bronze">0{index + 1}</span><span className="font-serif text-2xl font-semibold">{item}</span></li>)}</ol></div>

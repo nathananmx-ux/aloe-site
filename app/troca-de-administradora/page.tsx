@@ -23,7 +23,7 @@ export default function TransitionPage() {
     <>
       <Header />
       <main className="bg-white">
-        <section className="bg-moss py-16 text-white md:py-20">
+        <section className="bg-deep py-16 text-white md:py-20">
           <div className="section-shell grid gap-7 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
             <div>
               <p className="text-sm font-bold uppercase text-bronze">Troca de administradora</p>

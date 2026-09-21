@@ -163,7 +163,8 @@ export const partners = [
     image: "/images/leonardo-almeida.jpg",
     imageClassName: "object-[center_35%]",
     description:
-      "Engenheiro civil e administrador, gerente de condomínios, responsável pelo time comercial e operacional."
+      "Engenheiro civil e administrador, gerente de condomínios e responsável pelas frentes comercial e operacional da Aloe.",
+    areas: ["Engenharia", "Operação", "Relacionamento"]
   },
   {
     name: "Leonardo Sandovette",
@@ -171,7 +172,8 @@ export const partners = [
     image: "/images/leonardo-sandovette.jpg",
     imageClassName: "object-[center_58%]",
     description:
-      "Pós-graduado em Administração, com ênfase em finanças, síndico profissional e responsável pelo time de backoffice."
+      "Pós-graduado em Administração, com ênfase em finanças, síndico profissional e responsável pela estrutura administrativa e pelo backoffice da Aloe.",
+    areas: ["Finanças", "Administração", "Backoffice"]
   }
 ];
 

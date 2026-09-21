@@ -94,7 +94,7 @@ export default function AdministrationPage() {
           </div>
         </section>
 
-        <section className="bg-moss py-16 text-white md:py-20">
+        <section className="bg-deep py-16 text-white md:py-20">
           <div className="section-shell grid items-end gap-8 md:grid-cols-[1fr_auto]">
             <div><p className="text-sm font-bold uppercase text-bronze">Próximo passo</p><h2 className="mt-3 max-w-3xl font-serif text-4xl font-semibold md:text-5xl">Uma proposta construída a partir da realidade do condomínio.</h2></div>
             <ButtonLink href="/#contato" variant="secondary" dataEvent="click_solicitar_proposta">Conversar com a Aloe</ButtonLink>

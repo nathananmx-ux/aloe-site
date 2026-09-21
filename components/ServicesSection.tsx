@@ -1,46 +1,98 @@
 "use client";
 
-import Image from "next/image";
-import { ChevronDown } from "lucide-react";
+import {
+  Archive,
+  BadgeCheck,
+  Banknote,
+  BriefcaseBusiness,
+  Building2,
+  CalendarClock,
+  ChevronDown,
+  ClipboardCheck,
+  FileSignature,
+  FileText,
+  Landmark,
+  ListChecks,
+  MessageSquareText,
+  ReceiptText,
+  ScrollText,
+  SearchCheck,
+  UserRoundCheck,
+  UsersRound,
+  Vote,
+  Wrench,
+  type LucideIcon
+} from "lucide-react";
 import { useState } from "react";
-import { mediaMap } from "@/data/media";
+
+type Stage = { label: string; icon: LucideIcon };
 
 const areas = [
   {
     number: "01",
     title: "Financeiro",
     text: "Boletos, pagamentos, despesas e prestação de contas.",
-    image: mediaMap.home.organize.financial
+    stages: [
+      { label: "Boleto", icon: ReceiptText },
+      { label: "Conta", icon: Landmark },
+      { label: "Pagamento", icon: Banknote },
+      { label: "Prestação de contas", icon: ClipboardCheck }
+    ] satisfies Stage[]
   },
   {
     number: "02",
     title: "Administrativo",
     text: "Cadastros, documentos, contratos e histórico.",
-    image: mediaMap.home.organize.administrative
+    stages: [
+      { label: "Documento", icon: FileText },
+      { label: "Contrato", icon: FileSignature },
+      { label: "Conferência", icon: SearchCheck },
+      { label: "Arquivo organizado", icon: Archive }
+    ] satisfies Stage[]
   },
   {
     number: "03",
     title: "Assembleias",
     text: "Editais, pautas, atas e acompanhamento das decisões.",
-    image: mediaMap.home.organize.assemblies
+    stages: [
+      { label: "Pauta", icon: ListChecks },
+      { label: "Reunião", icon: UsersRound },
+      { label: "Deliberação", icon: Vote },
+      { label: "Ata", icon: ScrollText }
+    ] satisfies Stage[]
   },
   {
     number: "04",
     title: "Cobrança",
     text: "Acompanhamento de inadimplência e apoio às medidas cabíveis.",
-    image: mediaMap.home.organize.collection
+    stages: [
+      { label: "Boleto", icon: ReceiptText },
+      { label: "Vencimento", icon: CalendarClock },
+      { label: "Acompanhamento", icon: SearchCheck },
+      { label: "Regularização", icon: BadgeCheck }
+    ] satisfies Stage[]
   },
   {
     number: "05",
     title: "Operação",
     text: "Fornecedores, orçamentos, manutenção e serviços contratados.",
-    image: mediaMap.home.organize.operations
+    stages: [
+      { label: "Condomínio", icon: Building2 },
+      { label: "Fornecedor", icon: BriefcaseBusiness },
+      { label: "Serviço", icon: Wrench },
+      { label: "Acompanhamento", icon: ClipboardCheck }
+    ] satisfies Stage[]
   },
   {
     number: "06",
     title: "Comunicação",
     text: "Interlocução organizada com síndico, conselho e moradores.",
-    image: mediaMap.home.organize.communication
+    stages: [
+      { label: "Síndico", icon: UserRoundCheck },
+      { label: "Gerente", icon: MessageSquareText },
+      { label: "Conselho", icon: UsersRound },
+      { label: "Moradores", icon: Building2 }
+    ] satisfies Stage[]
   }
 ];
 
@@ -65,18 +117,30 @@ export function ServicesSection() {
 
         <div className="mt-10 grid items-start gap-10 lg:grid-cols-12 lg:gap-16">
           <div className="lg:sticky lg:top-24 lg:col-span-5">
-            <div className="relative aspect-[4/5] overflow-hidden bg-mist">
-              <Image
-                key={activeArea.image.src}
-                src={activeArea.image.src}
-                alt={activeArea.image.alt}
-                fill
-                sizes="(max-width: 1023px) 100vw, 42vw"
-                className="services-active-image object-cover"
-              />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-ink/70 to-transparent px-6 pb-6 pt-24">
-                <p className="text-xs font-bold uppercase text-white/75">{activeArea.number}</p>
-                <p className="mt-1 font-serif text-2xl text-white">{activeArea.title}</p>
+            <div className="aspect-[4/5] overflow-hidden border border-moss/15 bg-porcelain p-6 sm:p-8" aria-live="polite">
+              <div key={activeArea.number} className="services-active-image flex h-full flex-col">
+                <div className="flex items-end justify-between border-b border-moss/20 pb-5">
+                  <div>
+                    <p className="text-xs font-bold text-bronze">{activeArea.number}</p>
+                    <p className="mt-1 font-serif text-3xl text-ink">{activeArea.title}</p>
+                  </div>
+                  <span className="text-xs font-bold uppercase text-moss/60">Fluxo Aloe</span>
+                </div>
+                <ol className="my-auto">
+                  {activeArea.stages.map(({ label, icon: Icon }, index) => (
+                    <li key={label} className="relative grid grid-cols-[3rem_1fr] items-center gap-4 py-3.5">
+                      {index < activeArea.stages.length - 1 ? <span className="absolute left-6 top-[3.9rem] h-7 w-px bg-bronze/55" aria-hidden="true" /> : null}
+                      <span className={`grid size-12 place-items-center rounded-full border ${index === activeArea.stages.length - 1 ? "border-bronze bg-bronze text-deep" : "border-moss/20 bg-paper text-moss"}`}>
+                        <Icon size={20} strokeWidth={1.7} aria-hidden="true" />
+                      </span>
+                      <span>
+                        <span className="block text-[0.65rem] font-bold text-bronze">{String(index + 1).padStart(2, "0")}</span>
+                        <span className="mt-0.5 block text-sm font-semibold text-ink sm:text-base">{label}</span>
+                      </span>
+                    </li>
+                  ))}
+                </ol>
+                <p className="border-t border-moss/15 pt-4 text-xs leading-5 text-graphite/65">Uma sequência conectada, com registro e acompanhamento.</p>
               </div>
             </div>
           </div>

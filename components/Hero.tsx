@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { mediaMap } from "@/data/media";
 
-const AUTOPLAY_DELAY = 6500;
+const AUTOPLAY_DELAY = 5000;
 
 const slides = [
   {
@@ -47,11 +47,11 @@ const buttonBase =
 
 export function Hero() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [hovered, setHovered] = useState(false);
-  const [focused, setFocused] = useState(false);
   const [manualMode, setManualMode] = useState(false);
   const [reducedMotion, setReducedMotion] = useState(false);
+  const [inViewport, setInViewport] = useState(true);
   const touchStartX = useRef<number | null>(null);
+  const carouselRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
     const query = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -61,12 +61,23 @@ export function Hero() {
     return () => query.removeEventListener("change", updatePreference);
   }, []);
 
+  useEffect(() => {
+    const element = carouselRef.current;
+    if (!element) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => setInViewport(entry.isIntersecting),
+      { threshold: 0.18 }
+    );
+    observer.observe(element);
+    return () => observer.disconnect();
+  }, []);
+
   const moveTo = useCallback((index: number, fromInteraction = false) => {
     setActiveIndex((index + slides.length) % slides.length);
     if (fromInteraction) setManualMode(true);
   }, []);
 
-  const autoplayActive = !hovered && !focused && !manualMode && !reducedMotion;
+  const autoplayActive = inViewport && !manualMode && !reducedMotion;
 
   useEffect(() => {
     if (!autoplayActive) return;
@@ -78,15 +89,22 @@ export function Hero() {
 
   return (
     <section
+      ref={carouselRef}
       id="inicio"
-      className="hero-carousel relative isolate overflow-hidden bg-ink text-white"
+      className="hero-carousel relative isolate overflow-hidden bg-deep text-white"
       aria-roledescription="carrossel"
       aria-label="Destaques da Aloe"
-      onMouseEnter={() => setHovered(true)}
-      onMouseLeave={() => setHovered(false)}
-      onFocusCapture={() => setFocused(true)}
-      onBlurCapture={(event) => {
-        if (!event.currentTarget.contains(event.relatedTarget)) setFocused(false);
+      tabIndex={0}
+      onPointerDownCapture={() => setManualMode(true)}
+      onKeyDown={(event) => {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          moveTo(activeIndex - 1, true);
+        }
+        if (event.key === "ArrowRight") {
+          event.preventDefault();
+          moveTo(activeIndex + 1, true);
+        }
       }}
       onTouchStart={(event) => {
         touchStartX.current = event.touches[0]?.clientX ?? null;
@@ -124,7 +142,7 @@ export function Hero() {
 
               <div className="section-shell relative grid min-h-[650px] items-start pb-32 pt-12 md:min-h-[min(720px,78svh)] md:pb-28 md:pt-14">
                 <div className="max-w-[760px]">
-                  <p className="mb-5 inline-flex border-l-2 border-bronze pl-3 text-xs font-bold uppercase text-[#e6c498] sm:text-sm">
+                  <p className="mb-5 inline-flex border-l-2 border-bronze pl-3 text-xs font-bold uppercase text-bronze sm:text-sm">
                     {slide.eyebrow}
                   </p>
                   {index === 0 ? (
@@ -147,7 +165,7 @@ export function Hero() {
                       href={slide.primary.href}
                       data-event={index === 0 ? "click_solicitar_proposta" : undefined}
                       tabIndex={isActive ? 0 : -1}
-                      className={`${buttonBase} bg-bronze text-white hover:bg-white hover:text-moss`}
+                      className={`${buttonBase} bg-bronze text-deep hover:bg-white hover:text-[#0f3d32]`}
                     >
                       {slide.primary.label}
                       <ChevronRight size={18} aria-hidden="true" />

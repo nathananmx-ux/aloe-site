@@ -23,7 +23,7 @@ export function ButtonLink({
     "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-3 text-sm font-semibold transition";
   const variants = {
     primary:
-      "bg-moss text-porcelain shadow-soft hover:bg-ink hover:text-porcelain",
+      "bg-brandSolid text-white shadow-soft hover:bg-deep hover:text-white",
     secondary:
       "border border-moss/20 bg-porcelain/90 text-moss hover:border-moss/40 hover:bg-white",
     ghost: "text-moss hover:bg-moss/5"

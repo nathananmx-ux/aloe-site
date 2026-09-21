@@ -38,7 +38,7 @@ export function FinalCTA() {
   };
 
   return (
-    <section id="contato" className="bg-ink py-20 text-porcelain md:py-24">
+    <section id="contato" className="bg-deep py-20 text-white md:py-24">
       <div className="section-shell grid items-start gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16">
         <div className="max-w-xl">
           <p className="text-base font-extrabold text-bronze">Conversa inicial</p>
@@ -102,7 +102,7 @@ export function FinalCTA() {
             Conte brevemente o que vocês precisam resolver. <span className="font-normal text-white/60">(opcional)</span>
             <textarea name="notes" maxLength={600} rows={3} className="focus-ring w-full rounded-md border border-white/20 bg-white px-3 py-2 text-ink" />
           </label>
-          <button type="submit" className="focus-ring mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-bronze px-5 py-3 text-sm font-bold text-white transition hover:bg-[#b89262] sm:col-span-2">
+          <button type="submit" className="focus-ring mt-2 inline-flex min-h-12 items-center justify-center gap-2 rounded-md bg-bronze px-5 py-3 text-sm font-bold text-deep transition hover:brightness-110 sm:col-span-2">
             <span>Solicitar análise</span>
             <Send aria-hidden="true" size={17} strokeWidth={1.8} />
           </button>

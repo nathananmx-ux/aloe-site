@@ -18,9 +18,9 @@ const startingSteps = ["Reunião", "Documentação", "Estruturação", "Comunica
 export default function ImplantacaoPage() {
   return (
     <><Header /><main className="bg-white">
-      <section className="relative isolate min-h-[690px] overflow-hidden bg-ink">
+      <section className="relative isolate min-h-[690px] overflow-hidden bg-deep">
         <Image src={mediaMap.implantation.hero.src} alt={mediaMap.implantation.hero.alt} fill priority sizes="100vw" className="object-cover object-center" />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/95 via-ink/70 to-ink/15" />
+        <div className="absolute inset-0 bg-gradient-to-r from-deep/95 via-deep/70 to-deep/15" />
         <div className="section-shell relative flex min-h-[690px] items-end py-14 md:items-center md:py-20"><div className="max-w-[39rem] text-white"><p className="text-sm font-bold uppercase text-bronze">Implantação</p><h1 className="mt-4 font-serif text-4xl font-semibold leading-[0.98] sm:text-5xl md:text-6xl">Implantação condominial desde o primeiro dia.</h1><p className="mt-6 max-w-[34rem] text-lg leading-8 text-white/78">A Aloe estrutura os primeiros passos administrativos, financeiros e operacionais a partir da entrega das unidades.</p><div className="mt-8"><ButtonLink href="/#contato">Solicitar implantação</ButtonLink></div></div></div>
       </section>
 

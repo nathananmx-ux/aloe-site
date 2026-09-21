@@ -13,16 +13,27 @@ export function PlansSection() {
   return (
     <section id="planos" className="bg-white py-20 md:py-24">
       <div className="section-shell">
-        <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:gap-20">
+        <div className="grid items-end gap-10 lg:grid-cols-[0.82fr_1.18fr] lg:gap-20">
           <div>
             <p className="eyebrow">Planos para até 16 unidades</p>
             <h2 className="mt-4 font-serif text-3xl font-semibold leading-tight text-ink sm:text-4xl md:text-5xl">
               Uma base sólida, com serviços proporcionais à rotina.
             </h2>
           </div>
-          <p className="self-end text-lg leading-8 text-graphite/75">
-            Cinco modalidades evoluem da administração essencial para composições com limpeza e manutenção programada.
-          </p>
+          <div>
+            <p className="mb-6 max-w-xl text-base leading-7 text-graphite/75">Cada modalidade adiciona uma camada de serviço à mesma base administrativa.</p>
+            <ol className="grid h-64 grid-cols-5 items-end gap-1.5 border-b border-moss/25 sm:gap-3" aria-label="Evolução dos planos Aloe">
+              {plans.map((plan, index) => (
+                <li key={plan.name} className="group flex h-full items-end">
+                  <div className="flex w-full flex-col justify-between border-x border-t border-moss/20 bg-paper px-1.5 pb-3 pt-2 text-center transition group-hover:bg-mist sm:px-2" style={{ height: `${42 + index * 14}%` }}>
+                    <span className="text-[0.62rem] font-bold text-bronze">0{plan.level}</span>
+                    <span className="break-words text-[0.58rem] font-bold uppercase leading-4 text-moss sm:text-[0.68rem]">{plan.name}</span>
+                  </div>
+                </li>
+              ))}
+            </ol>
+            <div className="mt-3 flex justify-between text-[0.62rem] font-bold uppercase text-graphite/55"><span>Administração</span><span>Conservação</span></div>
+          </div>
         </div>
 
         <div className="mt-12 grid grid-cols-2 border-y border-moss/20 lg:grid-cols-5">

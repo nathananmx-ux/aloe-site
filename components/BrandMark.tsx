@@ -15,7 +15,16 @@ export function BrandMark({ compact = false, light = false }: BrandMarkProps) {
           alt={logo.alt}
           fill
           sizes={compact ? "(max-width: 639px) 32px, 40px" : "56px"}
-          className="object-contain"
+          className="theme-logo-light object-contain"
+          priority={compact}
+        />
+        <Image
+          src="/logo-aloe-symbol.svg"
+          alt=""
+          fill
+          sizes={compact ? "(max-width: 639px) 32px, 40px" : "56px"}
+          className="theme-logo-dark object-contain"
+          aria-hidden="true"
           priority={compact}
         />
       </span>

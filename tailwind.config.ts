@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+const themed = (name: string) => `rgb(var(--color-${name}) / <alpha-value>)`;
+
 const config: Config = {
   content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,22 +11,26 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        paper: "#F2F4F1",
-        porcelain: "#FFFFFF",
-        graphite: "#1F211F",
-        ink: "#0D1110",
-        moss: "#0F3D32",
-        sage: "#6F837A",
-        bronze: "#A7652A",
-        mist: "#E2E7E2",
-        clay: "#A7652A"
+        paper: themed("paper"),
+        porcelain: themed("porcelain"),
+        surfaceElevated: themed("surface-elevated"),
+        graphite: themed("graphite"),
+        ink: themed("ink"),
+        moss: themed("moss"),
+        brandSolid: themed("brand-solid"),
+        deep: themed("deep"),
+        sage: themed("sage"),
+        bronze: themed("bronze"),
+        mist: themed("mist"),
+        line: themed("line"),
+        clay: themed("bronze")
       },
       fontFamily: {
         sans: ["var(--font-inter)", "Arial", "sans-serif"],
         serif: ["var(--font-cormorant)", "Georgia", "serif"]
       },
       boxShadow: {
-        soft: "0 18px 60px rgba(25, 33, 29, 0.10)"
+        soft: "0 18px 60px rgb(var(--shadow-color) / 0.12)"
       }
     }
   },

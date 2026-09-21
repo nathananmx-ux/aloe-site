@@ -4,12 +4,13 @@ import { Menu, UserRound, X } from "lucide-react";
 import { useState } from "react";
 import { primaryNavItems } from "@/data/home";
 import { BrandMark } from "./BrandMark";
+import { ThemeToggle } from "./ThemeToggle";
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-moss/10 bg-white/95 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-moss/15 bg-porcelain/95 backdrop-blur">
       <div className="section-shell flex min-h-16 items-center justify-between gap-3 lg:min-h-[72px]">
         <a href="/" className="focus-ring shrink-0 rounded-sm" aria-label="Aloe Condomínios, início">
           <BrandMark compact />
@@ -25,9 +26,10 @@ export function Header() {
           <a href="/area-do-cliente" data-event="click_area_cliente" className="focus-ring inline-flex items-center gap-2 whitespace-nowrap text-xs font-semibold text-moss hover:underline 2xl:text-sm">
             <UserRound size={17} aria-hidden="true" /> Área do Cliente
           </a>
-          <a href="/#contato" data-event="click_solicitar_proposta" className="focus-ring inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-sm bg-moss px-4 text-xs font-semibold text-white hover:bg-ink 2xl:text-sm">
+          <a href="/#contato" data-event="click_solicitar_proposta" className="focus-ring inline-flex min-h-11 items-center justify-center whitespace-nowrap rounded-sm bg-brandSolid px-4 text-xs font-semibold text-white hover:bg-deep 2xl:text-sm">
             Solicitar proposta
           </a>
+          <ThemeToggle />
         </div>
         <button
           type="button"
@@ -47,7 +49,8 @@ export function Header() {
               {item.label}
             </a>
           ))}
-          <a href="/#contato" className="focus-ring mt-2 inline-flex min-h-11 items-center justify-center rounded-sm bg-moss px-4 text-sm font-semibold text-white" onClick={() => setOpen(false)}>
+          <ThemeToggle mobile />
+          <a href="/#contato" className="focus-ring mt-2 inline-flex min-h-11 items-center justify-center rounded-sm bg-brandSolid px-4 text-sm font-semibold text-white" onClick={() => setOpen(false)}>
             Solicitar proposta
           </a>
         </nav>

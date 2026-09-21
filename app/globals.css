@@ -5,7 +5,37 @@
 :root {
   --font-inter: "Inter", "Segoe UI", Arial, sans-serif;
   --font-cormorant: "Cormorant Garamond", Georgia, serif;
+  --color-paper: 242 244 241;
+  --color-porcelain: 255 255 255;
+  --color-surface-elevated: 247 249 246;
+  --color-graphite: 31 33 31;
+  --color-ink: 13 17 16;
+  --color-moss: 15 61 50;
+  --color-brand-solid: 15 61 50;
+  --color-deep: 7 20 17;
+  --color-sage: 111 131 122;
+  --color-bronze: 157 93 37;
+  --color-mist: 226 231 226;
+  --color-line: 205 215 209;
+  --shadow-color: 25 33 29;
   color-scheme: light;
+}
+
+html[data-theme="dark"] {
+  --color-paper: 11 21 18;
+  --color-porcelain: 16 34 28;
+  --color-surface-elevated: 22 48 39;
+  --color-graphite: 184 192 188;
+  --color-ink: 242 244 241;
+  --color-moss: 121 188 164;
+  --color-brand-solid: 24 82 67;
+  --color-deep: 6 15 12;
+  --color-sage: 151 169 161;
+  --color-bronze: 214 170 116;
+  --color-mist: 28 54 45;
+  --color-line: 40 68 58;
+  --shadow-color: 0 0 0;
+  color-scheme: dark;
 }
 
 * {
@@ -18,9 +48,30 @@ html {
 
 body {
   margin: 0;
-  background: #fff;
-  color: #1f211f;
+  background: rgb(var(--color-paper));
+  color: rgb(var(--color-ink));
   font-family: var(--font-inter);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+html[data-theme="dark"] .bg-white {
+  background-color: rgb(var(--color-porcelain));
+}
+
+.theme-logo-dark {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-logo-light {
+  display: none;
+}
+
+html[data-theme="dark"] .theme-logo-dark {
+  display: block;
+}
+
+.theme-preserve-white {
+  background-color: #fff !important;
 }
 
 button,
@@ -52,7 +103,7 @@ a {
 }
 
 .focus-ring:focus-visible {
-  outline-color: #a98254;
+  outline-color: rgb(var(--color-bronze));
 }
 
 .hero-directors-image {
@@ -74,7 +125,7 @@ a {
 }
 
 .hero-progress-fill.is-running {
-  animation: hero-progress 6.5s linear forwards;
+  animation: hero-progress 5s linear forwards;
 }
 
 .hero-progress-fill.is-static {
@@ -91,17 +142,17 @@ a {
 }
 
 .services-active-image {
-  animation: services-image-in 300ms ease-out;
+  animation: services-visual-in 260ms ease-out;
 }
 
-@keyframes services-image-in {
+@keyframes services-visual-in {
   from {
-    opacity: 0.55;
-    transform: scale(1.015);
+    opacity: 0.25;
+    transform: translateY(6px);
   }
   to {
     opacity: 1;
-    transform: scale(1);
+    transform: translateY(0);
   }
 }
 

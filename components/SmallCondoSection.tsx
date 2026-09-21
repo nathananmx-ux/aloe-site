@@ -21,7 +21,7 @@ export function SmallCondoSection() {
             sizes="(max-width: 1023px) 100vw, 52vw"
             className="object-cover object-center"
           />
-          <div className="absolute left-5 top-5 bg-moss px-4 py-2 text-xs font-bold uppercase text-white shadow-soft">
+          <div className="absolute left-5 top-5 bg-brandSolid px-4 py-2 text-xs font-bold uppercase text-white shadow-soft">
             Até 16 unidades
           </div>
         </div>

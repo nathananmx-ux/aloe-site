@@ -28,7 +28,7 @@ export function SpecialistSection() {
           </div>
           <ArrowDown className="mx-auto my-3 text-bronze" size={20} aria-hidden="true" />
           <div className="grid grid-cols-[48px_1fr] items-center gap-4 border-b border-moss/15 pb-5">
-            <span className="grid size-12 place-items-center rounded-full bg-moss text-white"><UserRoundCheck size={22} aria-hidden="true" /></span>
+            <span className="grid size-12 place-items-center rounded-full bg-brandSolid text-white"><UserRoundCheck size={22} aria-hidden="true" /></span>
             <div>
               <span className="text-xs font-bold uppercase text-bronze">Gerente responsável</span>
               <p className="mt-1 font-serif text-2xl text-moss">Acompanha e coordena</p>
