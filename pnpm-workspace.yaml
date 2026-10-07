@@ -1,2 +1,6 @@
 allowBuilds:
+  esbuild: true
   unrs-resolver: true
+overrides:
+  "@sanity/client": 7.27.0
+  "@sanity/media-library-types": 1.6.0

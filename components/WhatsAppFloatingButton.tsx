@@ -1,7 +1,14 @@
+"use client";
+
 import Image from "next/image";
+import { usePathname } from "next/navigation";
 import { contact } from "@/data/home";
 
 export function WhatsAppFloatingButton() {
+  const pathname = usePathname();
+
+  if (pathname.startsWith("/studio")) return null;
+
   return (
     <div className="group fixed bottom-4 right-4 z-40 flex items-center md:bottom-6 md:right-6">
       <span className="pointer-events-none mr-3 hidden whitespace-nowrap rounded-sm border border-line bg-porcelain px-3 py-2 text-xs font-semibold text-ink opacity-0 shadow-soft transition duration-200 group-hover:opacity-100 group-focus-within:opacity-100 md:block">
