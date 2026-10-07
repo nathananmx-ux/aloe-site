@@ -9,9 +9,35 @@ import { getPlanWhatsAppHref } from "@/lib/planWhatsApp";
 import { ButtonLink } from "./ButtonLink";
 
 function Value({ value }: { value: boolean | string }) {
-  if (value === true) return <Check className="mx-auto text-moss" size={18} aria-label="Incluído" />;
-  if (value === false || value === "-") return <Minus className="mx-auto text-graphite/40" size={16} aria-label="Não incluído" />;
-  return <span>{value}</span>;
+  if (value === true) {
+    return (
+      <span
+        className="mx-auto inline-flex h-7 w-7 items-center justify-center rounded-full bg-moss/10 text-moss"
+        title="Incluído"
+      >
+        <Check size={17} strokeWidth={2.4} aria-hidden="true" />
+        <span className="sr-only">Incluído</span>
+      </span>
+    );
+  }
+
+  if (value === false || value === "-") {
+    return (
+      <span
+        className="mx-auto inline-flex h-7 w-7 items-center justify-center text-graphite/70"
+        title="Não incluído"
+      >
+        <Minus size={18} strokeWidth={2.2} aria-hidden="true" />
+        <span className="sr-only">Não incluído</span>
+      </span>
+    );
+  }
+
+  return (
+    <span className="inline-flex min-w-7 items-center justify-center font-bold tabular-nums text-ink">
+      {value}
+    </span>
+  );
 }
 
 export function PlansPageContent() {

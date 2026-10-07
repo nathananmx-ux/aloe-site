@@ -24,19 +24,17 @@ export const logo = {
 };
 
 export const primaryNavItems = [
-  { label: "Administração", href: "/administracao" },
-  { label: "Pequenos condomínios", href: "/pequenos-condominios" },
-  { label: "Planos", href: "/planos" },
+  { label: "Início", href: "/" },
+  { label: "Quem Somos", href: "/#quem-somos" },
+  { label: "Blog", href: "/blog" },
   { label: "Implantação", href: "/implantacao" },
-  { label: "Quem somos", href: "/#quem-somos" }
-] as const;
-
-export const footerNavItems = [
-  ...primaryNavItems,
+  { label: "Planos", href: "/planos" },
   { label: "Área do Cliente", href: "/area-do-cliente" },
   { label: "Boletos", href: "/boletos" },
   { label: "Contato", href: "/#contato" }
 ] as const;
+
+export const footerNavItems = primaryNavItems;
 
 export const managementIndicators = [
   "Prestação de contas organizada",

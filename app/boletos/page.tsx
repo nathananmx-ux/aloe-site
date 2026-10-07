@@ -14,9 +14,9 @@ export const metadata: Metadata = {
 
 const boletoOptions = [
   {
-    title: "Boleto Aloe",
-    text: "Use esta opção para acessar boletos emitidos pelo sistema tradicional utilizado pela Aloe.",
-    button: "Acessar boleto",
+    title: "Boleto CondoNow",
+    text: "Use esta opção para acessar boletos emitidos pelo CondoNow.",
+    button: "Acessar Boleto CondoNow",
     href: "https://www.uniondata.com.br/boletoExpress/go.ud?id=442&hash=7400a0876647009a8a5617a9d9caf72fe916efd3",
     icon: WalletCards
   },
