@@ -169,8 +169,8 @@ export const partners = [
   {
     name: "Leonardo Sandovette",
     role: "COO",
-    image: "/images/leonardo-sandovette-retrato.png",
-    imageClassName: "object-center",
+    image: null,
+    imageClassName: "",
     description:
       "Pós-graduado em Administração, com ênfase em finanças, síndico profissional e responsável pela estrutura administrativa e pelo backoffice da Aloe.",
     areas: ["Finanças", "Administração", "Backoffice"]
@@ -223,7 +223,7 @@ export const differentials = [
 export const contact = {
   whatsappLabel: "+55 11 91042-3492",
   whatsappBaseHref: "https://wa.me/5511910423492",
-  whatsappHref: `https://wa.me/5511910423492?text=${encodeURIComponent("Olá! Conheci a Aloe pelo site e gostaria de conversar sobre a administração do meu condomínio.")}`,
+  whatsappHref: `https://wa.me/5511910423492?text=${encodeURIComponent("Olá! Vim pelo site da Aloe Condomínios e gostaria de mais informações.")}`,
   email: "contato@almeidagalante.com.br",
   city: "Santo André/SP",
   serviceRegion: "ABCDM e Grande SP"

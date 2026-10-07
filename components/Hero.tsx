@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { mediaMap } from "@/data/media";
+import { BrandMark } from "./BrandMark";
 
 const AUTOPLAY_DELAY = 5000;
 
@@ -142,9 +143,15 @@ export function Hero() {
 
               <div className="section-shell relative grid min-h-[650px] items-start pb-32 pt-12 md:min-h-[min(720px,78svh)] md:pb-28 md:pt-14">
                 <div className="max-w-[760px]">
-                  <p className="mb-5 inline-flex border-l-2 border-bronze pl-3 text-xs font-bold uppercase text-bronze sm:text-sm">
-                    {slide.eyebrow}
-                  </p>
+                  {index === 0 ? (
+                    <div className="mb-5 inline-flex border-l-2 border-bronze pl-3">
+                      <BrandMark compact light />
+                    </div>
+                  ) : (
+                    <p className="mb-5 inline-flex border-l-2 border-bronze pl-3 text-xs font-bold uppercase text-bronze sm:text-sm">
+                      {slide.eyebrow}
+                    </p>
+                  )}
                   {index === 0 ? (
                     <h1 className="font-serif text-[2.65rem] font-semibold leading-[1.02] text-white sm:text-5xl lg:text-[3.75rem]">
                       {slide.title}

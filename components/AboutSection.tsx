@@ -2,6 +2,8 @@ import Image from "next/image";
 import { partners } from "@/data/home";
 
 export function AboutSection() {
+  const photographedPartner = partners[0];
+
   return (
     <section id="quem-somos" className="bg-porcelain">
       <div className="section-shell py-20 md:py-24">
@@ -35,37 +37,47 @@ export function AboutSection() {
             <p className="max-w-[23rem] text-balance text-lg leading-7 text-white/75 md:justify-self-end">Competências complementares para uma gestão completa.</p>
           </div>
 
-          <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-0">
-          {partners.map((partner) => (
-            <article
-              key={partner.name}
-              className="min-w-0 md:px-10 md:first:border-r md:first:border-white/15 md:first:pl-0 md:last:pr-0"
-            >
+          <div className="mt-12 grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-stretch lg:gap-16">
+            {photographedPartner.image && (
               <div className="relative aspect-[4/5] w-full overflow-hidden bg-paper">
-                  <Image
-                    src={partner.image}
-                    alt={`Retrato de ${partner.name}`}
-                    fill
-                    sizes="(max-width: 767px) 100vw, 50vw"
-                    className={`object-cover ${partner.imageClassName}`}
-                  />
+                <Image
+                  src={photographedPartner.image}
+                  alt={`Retrato de ${photographedPartner.name}`}
+                  fill
+                  sizes="(max-width: 1023px) 100vw, 45vw"
+                  className={`object-cover ${photographedPartner.imageClassName}`}
+                />
               </div>
-              <div className="mt-7 min-w-0">
-                <span className="text-xs font-bold uppercase text-bronze">
-                  {partner.role}
-                </span>
-                <h3 className="mt-2 font-serif text-3xl font-semibold leading-tight text-white lg:text-4xl">
-                  {partner.name}
-                </h3>
-                <p className="mt-4 max-w-xl text-sm leading-7 text-white/72">
-                  {partner.description}
-                </p>
-                <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/15 pt-5">
-                  {partner.areas.map((area) => <span key={area} className="text-[0.68rem] font-bold uppercase text-bronze">{area}</span>)}
-                </div>
-              </div>
-            </article>
-          ))}
+            )}
+
+            <div className="grid content-stretch divide-y divide-white/15 border-y border-white/15">
+              {partners.map((partner) => (
+                <article
+                  key={partner.name}
+                  className="flex min-w-0 flex-col justify-center py-9 first:pt-0 last:pb-0 lg:px-2 lg:first:pt-8 lg:last:pb-8"
+                >
+                  <span className="text-xs font-bold uppercase text-bronze">
+                    {partner.role}
+                  </span>
+                  <h3 className="mt-2 font-serif text-3xl font-semibold leading-tight text-white lg:text-4xl">
+                    {partner.name}
+                  </h3>
+                  <p className="mt-4 max-w-xl text-sm leading-7 text-white/72">
+                    {partner.description}
+                  </p>
+                  <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/15 pt-5">
+                    {partner.areas.map((area) => (
+                      <span
+                        key={area}
+                        className="text-[0.68rem] font-bold uppercase text-bronze"
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ))}
+            </div>
           </div>
         </div>
       </div>

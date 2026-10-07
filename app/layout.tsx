@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
 import { AnalyticsEvents } from "@/components/AnalyticsEvents";
+import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -50,6 +51,7 @@ export default function RootLayout({
         />
         <AnalyticsEvents />
         {children}
+        <WhatsAppFloatingButton />
       </body>
     </html>
   );

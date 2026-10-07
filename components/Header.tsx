@@ -11,7 +11,7 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-moss/15 bg-porcelain/95 backdrop-blur">
-      <div className="section-shell flex min-h-16 items-center justify-between gap-3 lg:min-h-[72px]">
+      <div className="mx-auto flex min-h-16 w-[min(1280px,calc(100%-32px))] items-center justify-between gap-3 lg:min-h-[72px]">
         <a href="/" className="focus-ring shrink-0 rounded-sm" aria-label="Aloe Condomínios, início">
           <BrandMark compact />
         </a>

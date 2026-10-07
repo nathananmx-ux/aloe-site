@@ -3,7 +3,7 @@ export const mediaMap = {
   home: {
     heroInstitutional: {
       src: "/images/aloe-diretoria-hero.jpg",
-      alt: "Diretores da Aloe Administradora de Condomínios",
+      alt: "Leonardo Almeida, diretor da Aloe Administradora de Condomínios",
       source: "Acervo Aloe"
     },
     heroSmallCondo: {
