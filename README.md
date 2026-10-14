@@ -8,7 +8,7 @@ Site institucional em Next.js com Blog integrado ao Sanity CMS.
 2. Copie `.env.example` para `.env.local` e preencha os valores.
 3. Use o mesmo `projectId`, dataset e API version nas variáveis de servidor e nas variáveis `NEXT_PUBLIC_*` do Studio.
 4. Não exponha `SANITY_READ_TOKEN` nem `SANITY_REVALIDATE_SECRET` no navegador.
-5. No projeto Sanity, adicione as origens `http://localhost:3000` e `https://aloe-site.vercel.app` em **API > CORS Origins**, habilitando credenciais para o Studio.
+5. No projeto Sanity, adicione as origens `http://localhost:3000`, `https://www.aloeadm.com.br` e `https://aloe-site.vercel.app` em **API > CORS Origins**, habilitando credenciais para o Studio.
 6. Cadastre as mesmas variáveis no projeto da Vercel e faça um novo deploy.
 
 Depois da configuração, o painel fica em `/studio`. O login e as permissões são administrados pelo próprio Sanity.
@@ -17,7 +17,7 @@ Depois da configuração, o painel fica em `/studio`. O login e as permissões s
 
 O site consulta o conteúdo publicado a cada 60 segundos. Para atualização imediata, crie um webhook no Sanity:
 
-- URL: `https://aloe-site.vercel.app/api/revalidate`
+- URL: `https://www.aloeadm.com.br/api/revalidate`
 - Método: `POST`
 - Filtro: `_type == "post"`
 - Projeção: `{_type, "slug": slug.current}`

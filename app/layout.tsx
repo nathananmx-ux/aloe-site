@@ -5,7 +5,7 @@ import { WhatsAppFloatingButton } from "@/components/WhatsAppFloatingButton";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://aloe-site.vercel.app"),
+  metadataBase: new URL("https://www.aloeadm.com.br"),
   title: "Aloe Condomínios | Administração Condominial e Síndico Profissional",
   description:
     "Administração condominial com gestão financeira, regularização, suporte operacional, síndico profissional e acompanhamento próximo para condomínios.",
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
     description:
       "Administração condominial com gestão financeira, regularização, suporte operacional, síndico profissional e acompanhamento próximo para condomínios.",
     type: "website",
-    url: "https://aloe-site.vercel.app",
+    url: "https://www.aloeadm.com.br",
     images: ["/images/aloe-diretoria-hero.jpg"],
     locale: "pt_BR"
   },
@@ -42,8 +42,8 @@ export default function RootLayout({
             "@context": "https://schema.org",
             "@type": "Organization",
             name: "Aloe Administradora de Condomínios",
-            url: "https://aloe-site.vercel.app",
-            logo: "https://aloe-site.vercel.app/logo-aloe-symbol.png",
+            url: "https://www.aloeadm.com.br",
+            logo: "https://www.aloeadm.com.br/logo-aloe-symbol.png",
             telephone: "+55 11 91042-3492",
             areaServed: ["ABCDM", "Grande São Paulo"],
             address: { "@type": "PostalAddress", addressLocality: "Santo André", addressRegion: "SP", addressCountry: "BR" }

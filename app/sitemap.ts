@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getBlogPostSlugs } from "@/lib/blog";
 
-const base = "https://aloe-site.vercel.app";
+const base = "https://www.aloeadm.com.br";
 const routes = ["", "/blog", "/administracao", "/implantacao", "/pequenos-condominios", "/troca-de-administradora", "/planos", "/area-do-cliente", "/boletos"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
