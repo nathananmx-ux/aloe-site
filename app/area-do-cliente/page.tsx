@@ -18,9 +18,10 @@ export const metadata: Metadata = {
 
 const accessItems = [
   {
-    title: "Segunda via de boletos",
-    text: "Acesse as opções disponíveis para emissão de segunda via e pagamento.",
-    href: "/boletos",
+    title: "Boleto CondoNow",
+    text: "Use esta opção para acessar boletos emitidos pelo CondoNow.",
+    href: "https://www.uniondata.com.br/boletoExpress/go.ud?id=442&hash=7400a0876647009a8a5617a9d9caf72fe916efd3",
+    external: true,
     icon: WalletCards
   },
   {

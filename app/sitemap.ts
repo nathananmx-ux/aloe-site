@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { getBlogPostSlugs } from "@/lib/blog";
 
 const base = "https://www.aloeadm.com.br";
-const routes = ["", "/blog", "/administracao", "/implantacao", "/pequenos-condominios", "/troca-de-administradora", "/planos", "/area-do-cliente", "/boletos"];
+const routes = ["", "/blog", "/administracao", "/implantacao", "/pequenos-condominios", "/troca-de-administradora", "/planos", "/area-do-cliente"];
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const blogSlugs = await getBlogPostSlugs();

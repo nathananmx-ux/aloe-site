@@ -30,7 +30,6 @@ export const primaryNavItems = [
   { label: "Implantação", href: "/implantacao" },
   { label: "Planos", href: "/planos" },
   { label: "Área do Cliente", href: "/area-do-cliente" },
-  { label: "Boletos", href: "/boletos" },
   { label: "Contato", href: "/#contato" }
 ] as const;
 
@@ -163,15 +162,6 @@ export const partners = [
     description:
       "Engenheiro civil e administrador, gerente de condomínios e responsável pelas frentes comercial e operacional da Aloe.",
     areas: ["Engenharia", "Operação", "Relacionamento"]
-  },
-  {
-    name: "Leonardo Sandovette",
-    role: "COO",
-    image: null,
-    imageClassName: "",
-    description:
-      "Pós-graduado em Administração, com ênfase em finanças, síndico profissional e responsável pela estrutura administrativa e pelo backoffice da Aloe.",
-    areas: ["Finanças", "Administração", "Backoffice"]
   }
 ];
 
