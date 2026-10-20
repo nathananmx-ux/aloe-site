@@ -35,7 +35,7 @@ export function AboutSection() {
               <h2 className="mt-3 font-serif text-3xl font-semibold sm:text-4xl md:text-5xl">Quem está à frente da Aloe.</h2>
             </div>
             <p className="max-w-[23rem] text-balance text-lg leading-7 text-white/75 md:justify-self-end">
-              Experiência técnica aplicada à rotina condominial.
+              Uma presença de confiança para acompanhar decisões, rotinas e prioridades.
             </p>
           </div>
 
@@ -62,6 +62,12 @@ export function AboutSection() {
               <p className="mt-4 max-w-xl text-sm leading-7 text-white/72">
                 {leader.description}
               </p>
+              <p className="mt-4 max-w-xl text-sm leading-7 text-white/72">
+                {leader.approach}
+              </p>
+              <blockquote className="mt-7 max-w-xl border-l-2 border-bronze pl-5 font-serif text-xl leading-8 text-white/90">
+                {leader.statement}
+              </blockquote>
               <div className="mt-6 flex flex-wrap gap-x-5 gap-y-2 border-t border-white/15 pt-5">
                 {leader.areas.map((area) => (
                   <span

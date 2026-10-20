@@ -161,6 +161,10 @@ export const partners = [
     imageClassName: "object-[center_35%]",
     description:
       "Engenheiro civil e administrador, gerente de condomínios e responsável pelas frentes comercial e operacional da Aloe.",
+    approach:
+      "Mais do que coordenar processos, Leonardo acompanha de perto as necessidades de cada condomínio. É a presença de uma pessoa de confiança, preparada para ouvir, orientar decisões e conduzir a rotina com responsabilidade, clareza e cuidado.",
+    statement:
+      "Confiança se constrói com presença, resposta e compromisso com o que foi combinado.",
     areas: ["Engenharia", "Operação", "Relacionamento"]
   }
 ];
